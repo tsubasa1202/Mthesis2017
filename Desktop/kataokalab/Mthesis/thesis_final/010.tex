@@ -1,0 +1,41 @@
+\newif\ifjapanese
+
+\japanesetrue	% 論文全体を日本語で書く（英語で書くならコメントアウト）
+
+\ifjapanese
+	\documentclass[12pt]{jreport}
+	\renewcommand{\bibname}{参考文献}
+	\newcommand{\acknowledgmentname}{謝辞}
+\usepackage{flafter}
+\usepackage{ascmac}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{mhchem}	%追加（化学式）by iwamoto
+\usepackage{float} 		%追加（図の挿入）by iwamoto
+\usepackage{url}		%追加（url） by iwamoto
+\usepackage{comment} %追加（comment） by iwamoto
+\usepackage{ylab_thesis}
+\usepackage[format=hang,labelsep=quad,margin=5pt]{caption}
+\usepackage{subfigure}	
+
+\begin{document}
+\setcounter{topnumber}{10} % 頁上部の最大float数
+\setcounter{bottomnumber}{10} % 頁下部の 〃 
+\setcounter{totalnumber}{10} \dag% １頁の 〃 
+\setcounter{dbltopnumber}{10} % twtocolumtn時の頁上部の最大float数 
+\renewcommand\topfraction{0.8} % 頁上部のfloatで占める最大の割合 
+\renewcommand\bottomfraction{0.8} % 頁下部の 〃 
+\renewcommand\textfraction{0.05} % １頁のテキスト部の占める最小割合 
+\renewcommand\floatpagefraction{0.8} % floatが単独頁になるときの最小割合 
+\renewcommand\dbltopfraction{0.8} % twocolumn時の topfraction 
+\renewcommand\dblfloatpagefraction{0.8} % twocolumn時の floatpagefraction
+
+\chapter{今後の展望}
+\section{}
+医療におけるX線検査は、患者の被爆を最小限にしながら診断に適当な画質を確保することが望まれる。高画質な画像を得るためには十分な発光量が必要であり、低線量照射においてX線フィルムの乳剤の感度を増進させるために、増感紙を乳剤に接するように置くことがある。増感紙は高い原子番号を持つ光放出蛍光剤からなり、これによりX線に対するフィルムの感度は10倍程度増加する。
+
+\section{投影画像の取得}
+本実験では、富士フイルム株式会社の富士医療用増感紙HR-16を用いた。蛍光体には$Gd_{2}O_{2}S:Tb$などが用いられており、厚みは1mm程度である。
+
+
+\end{document}

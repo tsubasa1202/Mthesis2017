@@ -1,0 +1,12 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces CT装置の外観\relax }}{1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces CTの画像再構成法の原理\relax }}{3}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces 様々な物質のCT値\relax }}{4}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces 質量減弱係数の原子番号依存性と線源弱係数の原子番号依存性(@122keV)\newline 質量減弱係数はエネルギーが一定であれば物質によって異なる値を取るが，線源弱係数は物質が異なっても同一になる場合がある\relax }}{9}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces ビームハードニング効果\cite {spectralCT}\relax }}{10}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces 2層式検出器方式\cite {philips}\relax }}{11}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces 後頭蓋窩アーチファクトの低減\cite {spectralCT}:(a)には赤丸部に橋を横切るような線状の低吸収域が見られる。これにより脳幹や小脳などの描画不明瞭にとなりやすく，同部の出血や梗塞などの診断には限界がある。(b)ではこのアーチファクトが低減され，脳実質の観察が容易になる。\relax }}{13}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces 金属アーチファクトの低減\cite {spectralCT}:金属スクリューを用いた腰椎後方固定術後症例で(a)では金属アーチファクトのためスクリュー自体およびその周辺組織の評価が困難となっているが，(b)では金蔵アーチファクトが著明に低原子，周辺組織の評価が容易になる。\relax }}{14}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces ヨード，カルシウム，水の線源弱係数(NISTより作成)\newline $\Delta \mu _{\rm Low}$が$\Delta \mu _{\rm High}$より大きいため低エネルギーにおける画像の方がコントラストが強調される\relax }}{15}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces エネルギー積分型CTとスペクトラルCTにおけるノイズの影響の比較\cite {ogawa_kaisetu}\relax }}{16}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces k吸収端イメージングの原理(減弱曲線はNISTより作成)\relax }}{16}
