@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2016.12.28)  31 JAN 2017 20:16
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2016.12.28)  3 FEB 2017 00:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -539,7 +539,11 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks25
 ) (./main.aux
-(./00_abstract.aux) (./04.aux))
+(./00_abstract.aux) (./01.aux) (./02.aux) (./03.aux) (./04.aux) (./05.aux
+
+LaTeX Warning: Label `fig:read_circuit_current' multiply defined.
+
+) (./06.aux) (./07.aux) (./08.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
@@ -605,248 +609,484 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 6.
  [2])
-(./main.toc)
+(./main.toc [3
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [3
+ [4] (./main.lof
 
-] (./main.lof
-
-LaTeX Warning: Citation `spectralCT' on page iv undefined on input line 6.
+LaTeX Warning: Citation `iinuma' on page v undefined on input line 6.
 
 
-LaTeX Warning: Citation `philips' on page iv undefined on input line 7.
+LaTeX Warning: Citation `nishidai' on page v undefined on input line 9.
 
 
-LaTeX Warning: Citation `spectralCT' on page iv undefined on input line 8.
+LaTeX Warning: Citation `nist' on page v undefined on input line 11.
 
 
-LaTeX Warning: Citation `spectralCT' on page iv undefined on input line 9.
+LaTeX Warning: Citation `QA' on page v undefined on input line 12.
 
 
-LaTeX Warning: Citation `ogawa_kaisetu' on page iv undefined on input line 11.
+LaTeX Warning: Citation `QA' on page v undefined on input line 14.
 
-)
+
+LaTeX Warning: Citation `hama_hand_2' on page v undefined on input line 15.
+
+
+LaTeX Warning: Citation `radiation_handbook' on page v undefined on input line 
+16.
+
+
+LaTeX Warning: Citation `kataoka_web' on page v undefined on input line 17.
+
+
+LaTeX Warning: Citation `hama_MPPC' on page v undefined on input line 18.
+
+
+LaTeX Warning: Citation `nist' on page v undefined on input line 20.
+
+
+LaTeX Warning: Citation `nist' on page v undefined on input line 21.
+
+
+LaTeX Warning: Citation `spectralCT' on page v undefined on input line 34.
+
+
+LaTeX Warning: Citation `philips' on page v undefined on input line 35.
+
+
+LaTeX Warning: Citation `spectralCT' on page v undefined on input line 36.
+
+[5]
+
+LaTeX Warning: Citation `spectralCT' on page vi undefined on input line 37.
+
+
+LaTeX Warning: Citation `ogawa_kaisetu' on page vi undefined on input line 39.
+
+[6])
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [4] (./main.lot
+ [7] (./main.lot
 
-LaTeX Warning: Citation `philips' on page v undefined on input line 2.
+LaTeX Warning: Citation `kataoka' on page viii undefined on input line 5.
+
+
+LaTeX Warning: Citation `philips' on page viii undefined on input line 9.
 
 )
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [5]
-\openout2 = `04.aux'.
+ [8]
+\openout2 = `05.aux'.
 
- (./04.tex
+ (./05.tex
 第 1 章
-File: image/other/CT_toshiba.eps Graphic file (type eps)
-<image/other/CT_toshiba.eps>
+File: image2/chapter5/PD_APD.png Graphic file (type eps)
+<image2/chapter5/PD_APD.png>
+File: image2/chapter5/MPPC_picutre.png Graphic file (type eps)
+ <image2/chapter5/MPPC_picutre.png>
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 8--22
+[][]$[]$[] []$[]$[] 
+ []
 
-LaTeX Warning: Citation `philips' on page 1 undefined on input line 28.
-
-
-LaTeX Warning: Citation `philips' on page 1 undefined on input line 28.
-
-[1
+File: image2/chapter5/apd_gain.eps Graphic file (type eps)
+<image2/chapter5/apd_gain.eps> [1
 
 
 ]
 
-LaTeX Warning: Reference `fig:colimater' on page 2 undefined on input line 35.
+LaTeX Warning: Reference `fig:read_circuit_pulse' on page 2 undefined on input 
+line 70.
+
+File: image2/chapter5/setup.png Graphic file (type eps)
+<image2/chapter5/setup.png>
+File: image2/chapter5/read_circuit_current.png Graphic file (type eps)
+ <image2/chapter5/read_circuit_current.png> [2]
+File: image2/chapter5/read_circuit_pulse.png Graphic file (type eps)
+
+<image2/chapter5/read_circuit_pulse.png>
+Overfull \hbox (21.10638pt too wide) in paragraph at lines 93--96
+[]  []
+ []
+
+File: image2/chapter5/read_circuit_pulse2.png Graphic file (type eps)
+<image2/chapter5/read_circuit_pulse2.png>
+Overfull \hbox (141.31827pt too wide) in paragraph at lines 98--100
+[]  [] 
+ []
 
 
-LaTeX Warning: Reference `fig:DAS' on page 2 undefined on input line 36.
-
-File: image/other/FBP.eps Graphic file (type eps)
-<image/other/FBP.eps> [2]
-
-LaTeX Warning: Reference `eq:atten' on page 3 undefined on input line 67.
+Underfull \hbox (badness 10000) in paragraph at lines 92--101
+[][]$[]$[]
+ []
 
 [3]
-File: image2/chapter1/CT_value.jpg Graphic file (type eps)
- <image2/chapter1/CT_value.jpg>
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 109.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 109.
- [4]
-Overfull \hbox (5.50218pt too wide) in paragraph at lines 122--124
-\JY1/mc/m/n/12 が 、 $\OML/cmm/m/it/12 N[]$ \JY1/mc/m/n/12 は被写体により減弱し
-ていない大きな値なので $\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 N[]\OMS/cmsy/m/n/12 
-i ^^] j\OML/cmm/m/it/12 "[]\OMS/cmsy/m/n/12 j$ \JY1/mc/m/n/12 であり、 $[] [] \
-OMS/cmsy/m/n/12 ^^Y
+File: image2/chapter5/dose_current.eps Graphic file (type eps)
+ <image2/chapter5/dose_current.eps> [4]
+File: image2/chapter5/SD_phantom.png Graphic file (type eps)
+ <image2/chapter5/SD_phantom.png>
+File: image2/chapter5/SD_PD_0.5mA.png Graphic file (type eps)
+
+<image2/chapter5/SD_PD_0.5mA.png>
+File: image2/chapter5/SD_APD_0.5mA.png Graphic file (type eps)
+ <image2/chapter5/SD_APD_0.5mA.png>
+File: image2/chapter5/SD_MPPCcurrent_0.5mA.png Graphic file (type eps)
+
+<image2/chapter5/SD_MPPCcurrent_0.5mA.png>
+File: image2/chapter5/SD_MPPCpulse_0.5mA.png Graphic file (type eps)
+
+<image2/chapter5/SD_MPPCpulse_0.5mA.png>
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 145--173
+[][]$[]$[] []$[]$[]
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 145--173
+[]$[]$[] []$[]$[] 
  []
 
 [5]
 
-LaTeX Warning: Reference `fig:high_contrast_phantom' on page 6 undefined on inp
-ut line 175.
-
-[6]
-
-LaTeX Warning: Reference `fig:delta' on page 7 undefined on input line 179.
+LaTeX Warning: Reference `tab:SD_result' on page 6 undefined on input line 179.
 
 
-LaTeX Warning: Reference `fig;inpulse' on page 7 undefined on input line 181.
+File: image2/chapter5/SD_ROI.png Graphic file (type eps)
+<image2/chapter5/SD_ROI.png> [6]
+File: image2/chapter5/phantom1.eps Graphic file (type eps)
+ <image2/chapter5/phantom1.eps> [7]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 205.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 205.
+File: image2/chapter5/low_contrast_PD_slice.png Graphic file (type eps)
 
-
-LaTeX Warning: Reference `fig;inpulse' on page 7 undefined on input line 181.
-
-
-LaTeX Warning: Reference `fig:MTF_outou' on page 7 undefined on input line 181.
-
-
-[7] [8]
-File: image/other/mass_atten.eps Graphic file (type eps)
- <image/other/mass_atten.eps>
-File: image/other/linear_atten.eps Graphic file (type eps)
- <image/other/linear_atten.eps>
-Overfull \hbox (63.27756pt too wide) in paragraph at lines 213--214
+<image2/chapter5/low_contrast_PD_slice.png>
+Overfull \hbox (2.35416pt too wide) in paragraph at lines 213--214
  [] 
  []
 
-File: image/other/beam_hard.eps Graphic file (type eps)
-<image/other/beam_hard.eps>
+File: image2/chapter5/low_contrast_APD_slice.png Graphic file (type eps)
+<image2/chapter5/low_contrast_APD_slice.png>
+File: image2/chapter5/low_contrast_MPPC_current_slice.png Graphic file (type ep
+s)
 
-LaTeX Warning: Citation `spectralCT' on page 9 undefined on input line 237.
+<image2/chapter5/low_contrast_MPPC_current_slice.png>
+File: image2/chapter5/low_contrast_MPPC_pulse_slice.png Graphic file (type eps)
 
 
-LaTeX Warning: Citation `spectralCT' on page 9 undefined on input line 237.
+<image2/chapter5/low_contrast_MPPC_pulse_slice.png>
+Overfull \hbox (20.73366pt too wide) in paragraph at lines 211--239
+[][]$[]$[] []$[]$[]
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 211--239
+[]$[]$[] []$[]$[] 
+ []
+
+[8]
+Overfull \vbox (60.4658pt too high) has occurred while \output is active []
+
 
 [9]
+File: image2/chapter5/ROI.eps Graphic file (type eps)
+ <image2/chapter5/ROI.eps>
+File: image2/chapter5/cnr_current.png Graphic file (type eps)
+ <image2/chapter5/cnr_current.png> [10] [11]
+File: image2/chapter5/spatial_phantom.png Graphic file (type eps)
 
-LaTeX Warning: Citation `GE' on page 10 undefined on input line 253.
+<image2/chapter5/spatial_phantom.png>
+File: image2/chapter5/spatial_PD.png Graphic file (type eps)
+ <image2/chapter5/spatial_PD.png>
+Overfull \hbox (2.35416pt too wide) in paragraph at lines 325--326
+ [] 
+ []
 
+File: image2/chapter5/spatial_APD.png Graphic file (type eps)
+<image2/chapter5/spatial_APD.png>
+Overfull \hbox (23.55595pt too wide) in paragraph at lines 332--333
+ [] 
+ []
 
-LaTeX Warning: Citation `siemens' on page 10 undefined on input line 253.
+File: image2/chapter5/spatial_MPPC_current.png Graphic file (type eps)
+<image2/chapter5/spatial_MPPC_current.png>
+File: image2/chapter5/spatial_MPPC_pulse.png Graphic file (type eps)
 
-
-LaTeX Warning: Citation `philips' on page 10 undefined on input line 253.
-
-[10]
-
-LaTeX Warning: Citation `spectralCT' on page 11 undefined on input line 263.
-
-File: image/other/two_layer.eps Graphic file (type eps)
-<image/other/two_layer.eps>
-
-LaTeX Warning: Citation `philips' on page 11 undefined on input line 269.
-
-
-LaTeX Warning: Citation `philips' on page 11 undefined on input line 269.
-
-
-LaTeX Warning: Citation `airport_1' on page 11 undefined on input line 273.
-
-
-LaTeX Warning: Citation `airport_2' on page 11 undefined on input line 273.
-
-[11]
-
-LaTeX Warning: Citation `ogawa' on page 12 undefined on input line 278.
+<image2/chapter5/spatial_MPPC_pulse.png>
+Overfull \hbox (24.91336pt too wide) in paragraph at lines 346--347
+ [] 
+ []
 
 
-LaTeX Warning: Citation `ogawa_id' on page 12 undefined on input line 278.
+Overfull \hbox (20.73366pt too wide) in paragraph at lines 323--351
+[][]$[]$[] []$[]$[]
+ []
 
 
-LaTeX Warning: Citation `kowase' on page 12 undefined on input line 278.
-
-
-LaTeX Warning: Citation `Adam' on page 12 undefined on input line 278.
-
-
-LaTeX Warning: Citation `Jan' on page 12 undefined on input line 278.
-
-
-LaTeX Warning: Citation `ogawa' on page 12 undefined on input line 278.
-
-
-LaTeX Warning: Reference `sec:CdTe' on page 12 undefined on input line 278.
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 323--351
+[]$[]$[] []$[]$[] 
+ []
 
 [12]
+Overfull \vbox (61.02603pt too high) has occurred while \output is active []
 
-LaTeX Warning: Citation `kowase' on page 13 undefined on input line 281.
-
-
-LaTeX Warning: Citation `spectralCT' on page 13 undefined on input line 281.
-
-File: image/other/artifact_1.eps Graphic file (type eps)
-<image/other/artifact_1.eps>
-File: image/other/artifact_1_after.eps Graphic file (type eps)
- <image/other/artifact_1_after.eps>
-Overfull \hbox (11.67236pt too wide) in paragraph at lines 284--298
-[][]$[]$[] []$[]$[] 
- []
-
-
-LaTeX Warning: Citation `spectralCT' on page 13 undefined on input line 300.
-
-
-LaTeX Warning: Citation `spectralCT' on page 13 undefined on input line 300.
-
-File: image/other/artifact_2.eps Graphic file (type eps)
-<image/other/artifact_2.eps>
-File: image/other/artifact_2_after.eps Graphic file (type eps)
- <image/other/artifact_2_after.eps>
-Overfull \hbox (11.67236pt too wide) in paragraph at lines 307--321
-[][]$[]$[] []$[]$[] 
- []
-
-
-LaTeX Warning: Citation `spectralCT' on page 13 undefined on input line 323.
-
-
-LaTeX Warning: Citation `spectralCT' on page 13 undefined on input line 323.
 
 [13]
-
-LaTeX Warning: Reference `fig:rate' on page 14 undefined on input line 328.
-
-
-LaTeX Warning: Citation `material_id' on page 14 undefined on input line 328.
-
-
-LaTeX Warning: Citation `ogawa_id' on page 14 undefined on input line 329.
-
-
-LaTeX Warning: Citation `kowase' on page 14 undefined on input line 334.
-
-
-LaTeX Warning: Citation `ogawa_kaisetu' on page 14 undefined on input line 334.
-
-
-File: image/other/material_atten.eps Graphic file (type eps)
-<image/other/material_atten.eps> [14]
-File: image/other/noise_affect.eps Graphic file (type eps)
- <image/other/noise_affect.eps>
-
-LaTeX Warning: Citation `ogawa_kaisetu' on page 15 undefined on input line 353.
-
-
-
-LaTeX Warning: Citation `ogawa_kaisetu' on page 15 undefined on input line 353.
-
+File: image2/chapter5/MTF_phantom.png Graphic file (type eps)
+ <image2/chapter5/MTF_phantom.png>
+File: image2/chapter5/MTF_method.png Graphic file (type eps)
+ <image2/chapter5/MTF_method.png>
+[14]
+File: image2/chapter5/CT_MTF_PD.png Graphic file (type eps)
+ <image2/chapter5/CT_MTF_PD.png>
+File: image2/chapter5/CT_MTF_MPPCpulse.png Graphic file (type eps)
+ <image2/chapter5/CT_MTF_MPPCpulse.png>
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 388--402
+[][]$[]$[] []$[]$[] 
+ []
 
 [15]
-File: image/other/k-edge.eps Graphic file (type eps)
- <image/other/k-edge.eps>) [16] (./main.aux (./00_abstract.aux) (./04.aux))
+File: image2/chapter5/MTF_matome.png Graphic file (type eps)
+ <image2/chapter5/MTF_matome.png> [16]) [17]
+\openout2 = `06.aux'.
+
+ (./06.tex
+第 2 章
+File: image2/chapter5/241Am_57Co_Gain5_000_100ns.png Graphic file (type eps)
+<image2/chapter5/241Am_57Co_Gain5_000_100ns.png>
+File: image2/chapter5/YAP_MPPCsignal.png Graphic file (type eps)
+
+<image2/chapter5/YAP_MPPCsignal.png> [18
+
+
+
+]
+Overfull \hbox (6.75806pt too wide) in paragraph at lines 23--24
+[]\JY1/mc/m/n/12 エネルギ ー分解能は \OT1/cmr/m/n/12 13.4%(FWHM)@122keV\JY1/mc/
+m/n/12 、 \OT1/cmr/m/n/12 20.4%(FWHM)@59.5keV \JY1/mc/m/n/12 であ っ た 。 図 \
+OT1/cmr/m/n/12 7.1
+ []
+
+File: image2/chapter5/spectrum_multi.png Graphic file (type eps)
+<image2/chapter5/spectrum_multi.png> [19]
+File: image2/chapter5/read_circuit_pulse_multi.png Graphic file (type eps)
+
+<image2/chapter5/read_circuit_pulse_multi.png> [20]
+File: image2/chapter5/water_alchol.png Graphic file (type eps)
+
+<image2/chapter5/water_alchol.png> [21]
+File: image2/chapter5/120kV_0.1mA_20keV_100sec.png Graphic file (type eps)
+
+<image2/chapter5/120kV_0.1mA_20keV_100sec.png>
+File: image2/chapter5/120kV_0.1mA_40keV_100sec.png Graphic file (type eps)
+
+<image2/chapter5/120kV_0.1mA_40keV_100sec.png>
+File: image2/chapter5/120kV_0.1mA_60keV_100sec.png Graphic file (type eps)
+
+<image2/chapter5/120kV_0.1mA_60keV_100sec.png>
+File: image2/chapter5/120kV_0.1mA_90keV_100sec.png Graphic file (type eps)
+
+<image2/chapter5/120kV_0.1mA_90keV_100sec.png>
+File: image2/chapter5/120kV_0.1mA_V_100sec_multi.png Graphic file (type eps)
+
+<image2/chapter5/120kV_0.1mA_V_100sec_multi.png>
+Overfull \hbox (87.96935pt too wide) in paragraph at lines 117--120
+[]  []
+ []
+
+
+Overfull \hbox (20.73366pt too wide) in paragraph at lines 88--121
+[][]$[]$[] []$[]$[]
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 88--121
+[]$[]$[] []$[]$[]
+ []
+
+[22]
+Overfull \vbox (68.28104pt too high) has occurred while \output is active []
+
+
+[23]
+File: image2/chapter5/low_contrast_20-40.png Graphic file (type eps)
+ <image2/chapter5/low_contrast_20-40.png>
+File: image2/chapter5/low_contrast_40-60.png Graphic file (type eps)
+
+<image2/chapter5/low_contrast_40-60.png>
+File: image2/chapter5/low_contrast_60-90.png Graphic file (type eps)
+
+<image2/chapter5/low_contrast_60-90.png>
+File: image2/chapter5/low_contrast_90-120.png Graphic file (type eps)
+
+<image2/chapter5/low_contrast_90-120.png>
+File: image2/chapter5/low_contrast_20-120.png Graphic file (type eps)
+
+<image2/chapter5/low_contrast_20-120.png>
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 129--164
+[][]$[]$[] []$[]$[]
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 129--164
+[]$[]$[] []$[]$[]
+ []
+
+
+Overfull \vbox (50.05869pt too high) has occurred while \output is active []
+
+
+[24]
+File: image2/chapter5/Low_Con_slice.png Graphic file (type eps)
+ <image2/chapter5/Low_Con_slice.png> [25]
+File: image2/chapter5/Al_Al.png Graphic file (type eps)
+ <image2/chapter5/Al_Al.png>
+File: image2/chapter5/BH_30-60.png Graphic file (type eps)
+
+<image2/chapter5/BH_30-60.png>
+File: image2/chapter5/BH_60-90.png Graphic file (type eps)
+ <image2/chapter5/BH_60-90.png>
+File: image2/chapter5/BH_90-120.png Graphic file (type eps)
+
+<image2/chapter5/BH_90-120.png>
+File: image2/chapter5/BH_120-150.png Graphic file (type eps)
+ <image2/chapter5/BH_120-150.png>
+File: image2/chapter5/BH_all.png Graphic file (type eps)
+
+<image2/chapter5/BH_all.png>
+File: image2/chapter5/BH_APD.png Graphic file (type eps)
+ <image2/chapter5/BH_APD.png>
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 215--257
+[][]$[]$[] []$[]$[]
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 215--257
+[]$[]$[] []$[]$[]
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 215--257
+[]$[]$[] []$[]$[] 
+ []
+
+[26]
+Overfull \vbox (97.53767pt too high) has occurred while \output is active []
+
+
+[27]
+File: image2/chapter5/BH_slice.png Graphic file (type eps)
+ <image2/chapter5/BH_slice.png> [28]
+File: image2/chapter5/k-Z.png Graphic file (type eps)
+ <image2/chapter5/k-Z.png>
+File: image2/chapter5/Z_water.png Graphic file (type eps)
+
+<image2/chapter5/Z_water.png>
+File: image2/chapter5/Z_alcohol.png Graphic file (type eps)
+ <image2/chapter5/Z_alcohol.png>
+File: image2/chapter5/Z_PMMA.png Graphic file (type eps)
+
+<image2/chapter5/Z_PMMA.png>
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 310--331
+[][]$[]$[] []$[]$[]
+ []
+
+[29] [30]
+File: image2/chapter5/Iodine_phantom.png Graphic file (type eps)
+ <image2/chapter5/Iodine_phantom.png>
+File: image2/chapter5/iodine_atten.png Graphic file (type eps)
+
+<image2/chapter5/iodine_atten.png> [31]
+File: image2/chapter5/all_energy.png Graphic file (type eps)
+ <image2/chapter5/all_energy.png>
+File: image2/chapter5/I_kedge_100sec.png Graphic file (type eps)
+
+<image2/chapter5/I_kedge_100sec.png>
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 384--394
+[][]$[]$[] []$[]$[] 
+ []
+
+[32]
+File: image2/chapter5/over_I_kedge_100sec.png Graphic file (type eps)
+ <image2/chapter5/over_I_kedge_100sec.png>
+File: image2/chapter5/image1_back.png Graphic file (type eps)
+
+<image2/chapter5/image1_back.png>
+File: image2/chapter5/image2_back.png Graphic file (type eps)
+ <image2/chapter5/image2_back.png>
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 415--425
+[][]$[]$[] []$[]$[] 
+ []
+
+[33]
+File: image2/chapter5/image1-image2.png Graphic file (type eps)
+ <image2/chapter5/image1-image2.png> [34]
+File: image2/chapter5/I_Gd_atten.png Graphic file (type eps)
+ <image2/chapter5/I_Gd_atten.png>
+[35]
+File: image2/chapter5/K-edge_window.png Graphic file (type eps)
+ <image2/chapter5/K-edge_window.png> [36]
+
+LaTeX Warning: Reference `fig:spectrum_hanten' on page 37 undefined on input li
+ne 505.
+
+File: image2/chapter5/hanten_30-50.png Graphic file (type eps)
+<image2/chapter5/hanten_30-50.png>
+File: image2/chapter5/hanten_50-70.png Graphic file (type eps)
+ <image2/chapter5/hanten_50-70.png>
+File: image2/chapter5/hanten_profile.png Graphic file (type eps)
+
+<image2/chapter5/hanten_profile.png>
+Overfull \hbox (192.7879pt too wide) in paragraph at lines 527--529
+[]  [] 
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 512--530
+[][]$[]$[] []$[]$[]
+ []
+
+[37]) [38]
+\openout2 = `07.aux'.
+
+ (./07.tex
+第 3 章
+) [39
+
+
+
+]
+\openout2 = `08.aux'.
+
+ (./08.tex
+第 4 章
+File: image2/chapter5/oshimaetal.png Graphic file (type eps)
+<image2/chapter5/oshimaetal.png> [40
+
+
+
+]) [41] [42] (./main.aux (./00_abstract.aux) (./05.aux) (./06.aux) (./07.aux) (
+./08.aux))
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
  )
 (\end occurred when \iftrue on line 16 was incomplete) 
 Here is how much of TeX's memory you used:
- 12134 strings out of 493683
- 230665 string characters out of 6149652
- 295047 words of memory out of 5000000
- 15572 multiletter control sequences out of 15000+600000
+ 12383 strings out of 493683
+ 235534 string characters out of 6149652
+ 295413 words of memory out of 5000000
+ 15730 multiletter control sequences out of 15000+600000
  20352 words of font info for 83 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 36i,11n,41p,10394b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,41p,10394b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (22 pages, 78540 bytes).
+Output written on main.dvi (51 pages, 114632 bytes).

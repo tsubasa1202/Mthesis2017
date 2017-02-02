@@ -1,12 +1,46 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces CT装置の外観\relax }}{1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces CTの画像再構成法の原理\relax }}{3}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces 様々な物質のCT値\relax }}{4}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces 質量減弱係数の原子番号依存性と線源弱係数の原子番号依存性(@122keV)\newline 質量減弱係数はエネルギーが一定であれば物質によって異なる値を取るが，線源弱係数は物質が異なっても同一になる場合がある\relax }}{9}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces ビームハードニング効果\cite {spectralCT}\relax }}{10}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces 2層式検出器方式\cite {philips}\relax }}{11}
-\contentsline {figure}{\numberline {1.7}{\ignorespaces 後頭蓋窩アーチファクトの低減\cite {spectralCT}:(a)には赤丸部に橋を横切るような線状の低吸収域が見られる。これにより脳幹や小脳などの描画不明瞭にとなりやすく，同部の出血や梗塞などの診断には限界がある。(b)ではこのアーチファクトが低減され，脳実質の観察が容易になる。\relax }}{13}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces 金属アーチファクトの低減\cite {spectralCT}:金属スクリューを用いた腰椎後方固定術後症例で(a)では金属アーチファクトのためスクリュー自体およびその周辺組織の評価が困難となっているが，(b)では金蔵アーチファクトが著明に低原子，周辺組織の評価が容易になる。\relax }}{14}
-\contentsline {figure}{\numberline {1.9}{\ignorespaces ヨード，カルシウム，水の線源弱係数(NISTより作成)\newline $\Delta \mu _{\rm Low}$が$\Delta \mu _{\rm High}$より大きいため低エネルギーにおける画像の方がコントラストが強調される\relax }}{15}
-\contentsline {figure}{\numberline {1.10}{\ignorespaces エネルギー積分型CTとスペクトラルCTにおけるノイズの影響の比較\cite {ogawa_kaisetu}\relax }}{16}
-\contentsline {figure}{\numberline {1.11}{\ignorespaces k吸収端イメージングの原理(減弱曲線はNISTより作成)\relax }}{16}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 実験に使用したPD,APD(左)とMPPC(右)\relax }}{1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces APDのゲイン特性（at 25℃）※rootの画像に差し替える\relax }}{2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces 実験セットアップ※アルミニウムフィルターをつける\relax }}{2}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces 電流モードの読み出し回路\relax }}{3}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces パルスモードの読み出し回路\relax }}{3}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces 管電圧120kVで管電流を変化させたときの線量の変化\relax }}{4}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces 画像ノイズ評価ファントム\relax }}{5}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces 各素子で撮影した水ファントムの画像(管電流0.5mA)\relax }}{6}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces SDを測定するROIの設定\relax }}{7}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces 低コントラスト分解能実験に用いた被写体\relax }}{8}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces 各素子で撮影した図\nobreakspace {}6.10\relax のCT画像と1次元プロファイル(120kV、0.1mA)\relax }}{9}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces ROIの位置\relax }}{10}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces 管電圧120kVで管電流を変化させた時のCNR\relax }}{11}
+\contentsline {figure}{\numberline {1.14}{\ignorespaces 空間分解能評価ファントム\relax }}{12}
+\contentsline {figure}{\numberline {1.15}{\ignorespaces 空間分解能評価ファントムのCT画像\relax }}{13}
+\contentsline {figure}{\numberline {1.16}{\ignorespaces MTF測定に用いたファントム※模式図を隣にのせる\relax }}{14}
+\contentsline {figure}{\numberline {1.17}{\ignorespaces MTFの測定手順\relax }}{15}
+\contentsline {figure}{\numberline {1.18}{\ignorespaces PDとMPPC(パルスモード)で取得した図\nobreakspace {}6.16\relax のCT画像(120kV)※大きさがあっていないので直す\relax }}{16}
+\contentsline {figure}{\numberline {1.19}{\ignorespaces 図\nobreakspace {}6.18\relax から算出したMTF※MPPCの電流は0.1mAだけにあとで差し替える\relax }}{17}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces $^{57}$Coと$^{241}$Amのスペクトル\relax }}{18}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces MPPCで読み出したCe:YAPの波形\relax }}{19}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 多色イメージングの例\relax }}{20}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 多色イメージングのエネルギー弁別回路($V_{th4}>V_{th3}>V_{th2}>V_{th1}$)\relax }}{20}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 水とアルコールの線減弱係数(NISTより作成)\relax }}{21}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 各エネルギー閾値におけるX線エネルギースペクトル\relax }}{23}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 図\nobreakspace {}6.10\relax の全エネルギーと各エネルギーバンドにおけるCT画像\relax }}{24}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces 図\nobreakspace {}7.7\relax の一次元プロファイル\relax }}{25}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces 測定ファントム\relax }}{26}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces 図\nobreakspace {}7.9\relax の全エネルギーと各エネルギーバンドにおけるCT画像\relax }}{27}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces 図\nobreakspace {}7.10\relax の一次元プロファイル\relax }}{28}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces f(Z)の原子番号依存性(NISTより算出)\relax }}{29}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces それぞれのCT画像の原子番号同定結果\relax }}{30}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces ヨードのK-edgeイメージングに用いたファントム\relax }}{31}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces ヨード(30mg/mL)の線減弱係数のエネルギー依存性\relax }}{32}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces 管電圧120kV、管電流0.2mAで測定したX線全エネルギースペクトル(左)とヨード造影剤140mg/mLをMPPCの前に置いて測定した時のスペクトル(右)\relax }}{32}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces ヨードのK吸収端に閾値を設けて測定したX線スペクトル\relax }}{33}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces ヨードのK-edgeの後20keV帯域で取得したCT画像(左)とK-edgeの前20keV帯域で取得したCT画像(右)\relax }}{34}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces K-edgeイメージング$\mu _{\rm {k-edge}}(x,y)$\relax }}{35}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces ヨード造影剤(30mg/mL)とガドリニム造影剤(90,g/mL)の線減弱係数のエネルギー依存性\relax }}{36}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces CT画像を取得するエネルギー帯域\relax }}{37}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces 30-50keVと50-70keVの二つのエネルギー帯域で取得したガドリニウム造影剤とヨード造影剤のCT画像とその一次元プロファイル\relax }}{38}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 高精細シンチレータ(GAGG)とMPPCの外観とイメージング結果\relax }}{41}

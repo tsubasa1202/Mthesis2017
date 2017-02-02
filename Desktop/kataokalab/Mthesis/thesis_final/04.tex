@@ -33,7 +33,27 @@ CTとはcomputed\ tomographyの略であり，日本語名称はコンピュー�
 
 \section{X線CTの検出器}
 CTのX線検出器にシンチレータとフォトダイオード(PD)が用いられ、シンチレータでX線を光に変換し、PDで光電変換を行うのが最も主流である。シンチレータにはX線阻止能が高く、発光量が大きく、残光が少ないGOSが用いられる。また、R/R方式においては検出器全面に高さ20-30mmの主にタングステンなどの重金属でできている散乱線カット用のコリメータが配備されている。\Fref{fig:colimater}。
-また、PDからの出力電流をサンプリング時間（1ビューの時間、つまり0.2$\sim$1 ms）について積分し、たまった電荷量をA-D変換しディジタルデータとして送り出すDAS(Data Acquisition System)の構成の一例を\Fref{fig:DAS}に示す。DASに求めらる性能は以下のようなものがある。
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 600.000000 622.00000,width=0.6\hsize]{image2/chapter5/colimater.png} 
+ \end{center}
+ \caption{CTの検出器の構造}
+ \label{fig:colimater}
+\end{figure}
+
+また、PDからの出力電流をサンプリング時間（1ビューの時間、つまり0.2$\sim$1 ms）について積分し、たまった電荷量をA-D変換しディジタルデータとして送り出すDAS(Data Acquisition System)の構成の一例を\Fref{fig:DAS}に示す。
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 1000.000000 847.000000,width=0.6\hsize]{image2/chapter5/DAS.png} 
+ \end{center}
+ \caption{CTのDASの例。（少数のADCで全検出素子を分担する構成例）}
+ \label{fig:DAS}
+\end{figure}
+
+
+DASに求めらる性能は以下のようなものがある。
 \begin{enumerate}
 \item サンプリング時間(0.2$\sim$1 ms)内に全検出素子の出力をA-D変換する高速性。
 \item 検出器・DAS系の回路ノイズと量子化誤差はX線量子の統計的変動より十分低いレベルでなければならない
@@ -59,34 +79,54 @@ CTのX線検出器にシンチレータとフォトダイオード(PD)が用い�
  \label{fig:FBP}
 \end{wrapfigure}
 
-最終的な目標は線源弱係数の分布$\mu(x，y)$を求めることである。投影データとはX線パス$s$に沿って$\mu(x，y)$を線積分した値として以下のように定義される。
+最終的な目標は線源弱係数の分布$\mu(x，y)$を求めることである。\Fref{fig:FBP}において原画像$\mu(x,y)$と、計測データである投影データ$g(s,\theta)$の関係は次式のように定義される。
 \begin{align}
-&p(t，\theta)=\int\mu(x，y)ds\\
-&(t=x\cos{\theta}+y\sin{\theta})
+g(s，\theta)&=\int^{\infty}_{-\infty}\mu(x,y)dt\\
+&=\int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\mu(x,y)\delta(x\cos{\theta}+y\sin{\theta}-s)dxdy\label{eq:radon}
 \end{align}
-各$\theta$と$t$で規定される投影データ1本1本をレイ(ray)という。まあ一つの角度方向のレイの1セットをビュー(view)という。投影データの値は入射強度$I_0$と検出器で受ける強度$I_d$とから求められる\footnote{入射強度$I_0(t，\theta)$は直接計測できないが，この値はキャリブレーション補正により計測しない済む仕組みになっている。}。\Eref{eq:atten}より
+ここで、$(x,y)$は被写体を固定した静止座標系、$(s,t)$は被写体周りを回転する検出器の座標系である。$s$は中央にある検出器を中心とし底からの位置、$t$は検出器に垂直な直線上にある被写体の位置を示す。\Eref{eq:radon}は原画像のうち回転座標系の$s$に相当する部分のみをデルタ関数によって抽出し、抽出された値の総和をとることを示す。これは角度$\theta(0\leq\theta<\pi)$に置いて位置$s$に相当する直線上で$\mu(x,y)$を線積分することに相当する。$g(s,\theta)$を横軸$s$,縦軸$\theta$として2次元画像で示したものがサイノグラムである。また各$\theta$と$t$で規定される投影データ1本1本をレイ(ray)という。また一つの角度方向のレイの1セットをビュー(view)という。\\
+ここで入射光子数を$I_o$とし、人体との相互作用を受けずにそのまま透過した光子数を$I_d$とすれば次式が成り立つ。
 
 \begin{align}
-I_d(t，\theta)&=I_0(t，\theta)\exp{\left[-\int\mu(x，y)ds\right]}\\
-&=I_0(t，\theta)\exp[-p(t，\theta)]\\
-∴p(&t，\theta)=-\ln\left[\frac{I_d(t，\theta)}{I_0(t，\theta)}\right]\label{eq:touei}
+I_d(s，\theta)&=I_o(s，\theta)\exp{\left[-\int^{\infty}_{-\infty}\mu(x，y)dt\right]}\\
+&=I_0(t，\theta)\exp[-g(s，\theta)]\\
+∴g(&s，\theta)=-\ln\left[\frac{I_d(s，\theta)}{I_o(s，\theta)}\right]\label{eq:touei}
 \end{align}
-つまり，投影データ$p(t，\theta)$を入射強度$I_0$と検出器で受ける強度$I_d$から求めることができれば，その逆変換として，$\mu(x，y)$を求めることができる。そこで$\mu(x，y)$の二次元フーリエ変換$\hat{\mu}(\xi，\eta)$を考えると
+つまり，投影データ$g(s，\theta)$を入射強度$I_o$と検出器で受ける強度$I_d$から求めることができれば，その逆変換として，$\mu(x，y)$を求めることができる。そこで$\mu(x，y)$の二次元フーリエ変換$\hat{\mu}(\xi，\eta)$を考えると
 
 \begin{align}
-\hat{\mu}(\xi，\eta)=\displaystyle\int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\mu(x，y)e^{-i(\xi x+\eta y)}dxdy
-\end{align}となり，$(\xi，\eta)$を$\xi=\omega\cos{\theta}，\eta=\omega\sin{\theta}$なる変換を行い，極座標系$(\omega，\theta)$に変換すると，
+\hat{\mu}(\xi，\eta)=\displaystyle\int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\mu(x，y)e^{-i2\pi(\xi x+\eta y)}dxdy
+\end{align}となり，$(\xi，\eta)$を$\xi=\rho\cos{\theta}，\eta=\rho\sin{\theta}$なる変換を行い，極座標系$(\rho，\theta)$に変換すると，
 
 \begin{align}
-\hat{\mu}(\omega\cos{\theta}，\omega\sin{\theta})&=\int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\mu(x，y)e^{-i\omega(x\cos{\theta}+y\sin{\theta})}dxdy\\&=\int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\mu(x，y)e^{-i\omega t}dtds\\
-&=\int^{\infty}_{-\infty}\left[\int^{\infty}_{-\infty}\mu(x，y)ds\right]e^{-i\omega t}dt\\
-&=\int^{\infty}_{-\infty}p(t，\theta)e^{-i\omega t}dt\label{eq:mu_hat}
+\hat{\mu}(\rho\cos{\theta}，\rho\sin{\theta})&=\int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\mu(x，y)e^{-i2\pi\rho(x\cos{\theta}+y\sin{\theta})}dxdy\\&=\int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\mu(x，y)e^{-i2\pi\rho s}dsdt\\
+&=\int^{\infty}_{-\infty}\left[\int^{\infty}_{-\infty}\mu(x，y)dt\right]e^{-i2\pi\rho s}ds\\
+&=\int^{\infty}_{-\infty}g(s，\theta)e^{-i2\pi\rho s}ds\\\label{eq:mu_hat}
+&\equiv P(\rho,\theta)
 \end{align}
-つまり\Eref{eq:mu_hat}はある角度$\theta$における投影データを$t$について一次元フーリエ変換したものは線減弱係数$\mu$の二次元フーリエ変換の$\theta$成分である。よって，投影データを$\theta$が0から$\pi$に対して$\theta$方向\footnote{平行ビームであれば$p(t，\theta+\pi)=p(-t，\theta)$なので半回転で投影データの情報完備となる。画像の安定化のためには1回フルスキャンが基本だが，理論の説明は半回転の方がつ都合がよい。}の成分を得てそれらをtに関して1次元フーリエ変換することにより，$\mu(x，y)$のフーリエ空間$\hat{\mu}(\xi，\eta)$をタイヤのスポーク状に埋めることにより$\hat{\mu}(\xi，\eta)$が求まることになる。よって線源弱係数の分布$\mu(x，y)$は\Eref{eq:mu_hat}を逆フーリエ変換すればよいので
+つまり\Eref{eq:mu_hat}はある角度$\theta$における投影データを$s$について一次元フーリエ変換したものは線減弱係数$\mu$の二次元フーリエ変換の$\theta$成分である。よって，投影データを$\theta$が0から$\pi$に対して$\theta$方向\footnote{平行ビームであれば$p(t，\theta+\pi)=p(-t，\theta)$なので半回転で投影データの情報完備となる。画像の安定化のためには1回フルスキャンが基本だが，理論の説明は半回転の方がつ都合がよい。}の成分を得てそれらをtに関して1次元フーリエ変換することにより，$\mu(x，y)$のフーリエ空間$\hat{\mu}(\xi，\eta)$をタイヤのスポーク状に埋めることにより$\hat{\mu}(\xi，\eta)$が求まることになる。よって線源弱係数の分布$\mu(x，y)$は\Eref{eq:mu_hat}を逆フーリエ変換すればよいので
 \begin{align}
-\mu(x，y)=\frac{1}{(2\pi)^2}\int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\hat{\mu}(\xi，\eta)e^{i(\xi x+\eta y)}d\xi d\eta
+\mu(x，y)&= \int^{\infty}_{-\infty}\int^{\infty}_{-\infty}\hat{\mu}(\xi，\eta)e^{i2\pi(\xi x+\eta y)}d\xi d\eta\\
+&= \int^{2\pi}_{0}\int^{\infty}_{0}\hat{\mu}(\rho\cos{\theta}，\rho\sin{\theta})e^{i2\pi\rho(x\cos{\theta} +y\sin{\theta} )} \displaystyle\left|
+    \begin{array}{cc}
+      \displaystyle\frac{\partial \xi}{\partial \rho} &  \displaystyle\frac{\partial \xi}{\partial \theta}  \\
+      \displaystyle\frac{\partial \eta}{\partial \rho}  &  \displaystyle\frac{\partial \eta}{\partial \theta} 
+    \end{array}
+  \right|d\rho d\theta\\
+  &= \int^{2\pi}_{0}\int^{\infty}_{0}\hat{\mu}(\rho\cos{\theta}，\rho\sin{\theta})e^{i2\pi\rho(x\cos{\theta} +y\sin{\theta} )} \rho d\rho d\theta\\
+  &= \int^{\pi}_{0}\int^{\infty}_{0}\hat{\mu}(\rho\cos{\theta}，\rho\sin{\theta})|\rho|e^{i2\pi\rho(x\cos{\theta} +y\sin{\theta} )}  d\rho d\theta\\
+    &= \int^{\pi}_{0}\left\{\int^{\infty}_{0}P(\rho,\theta)|\rho|e^{i2\pi\rho s}  d\rho\right\} d\theta\label{eq:FBP_end}
 \end{align}
-と求まる。CT画像の画素の値はこの線源弱係数を用いて以下のように定義されている。
+と求まる。\Eref{eq:FBP_end}は投影データを一次元フーリエ変換し、\Fref{fig:ramp}のように空間周波数の絶対値で示される高周波数強調フィルタのランプ(ramp)フィルタ$|\rho|$を掛けた後に。一次元フーリエ逆変換を行い実空間に戻す。フィルタ補正した投影データを$\theta(0\leq\theta<\pi)$について逆投影し原画像$\mu(x,y)$を得る。フィルターの種類はいくつかあるが代表的な二つのフィルターを\Fref{fig:filter}にあげる。
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 600.000000 327.000000,width=1\hsize]{image2/chapter5/filter.png} 
+ \end{center}
+ \caption{CTの画像再構成用いられるフィルター}
+ \label{fig:filter}
+\end{figure}
+Rampフィルターは分解能に優れるがノイズを増強する。一方、Shepp-LogenフィルターはRampフィルターに比較しノイズを抑制するが解像度は劣る。またCT画像の画素の値(CT値)はこの線源弱係数を用いて以下のように定義されている。
 
 \begin{align}
 \rm CT値=1000\times\frac{\mu-\mu_w}{\mu_w}\label{eq:CT_value}
@@ -101,12 +141,11 @@ I_d(t，\theta)&=I_0(t，\theta)\exp{\left[-\int\mu(x，y)ds\right]}\\
  \label{fig:CT_value}
 \end{figure}
 
-※フィルターの話、ランプフィルターとシェップローガン
 
 \section{CTの画質評価}
 CTの画質評価に主にどれくらい画像ノイズ評価、どれくらい細いものが見えるかという空間分解能表、CT値が近い物質をどれくらい区別できるかという低コントラスト分解能評価お3つが主にある。
 
-\subsection{画像ノイズ評価}
+\subsection{画像ノイズ評価\label{sec:noise}}
 X線CTで水ファントムのような一様な被写体を撮影した場合、その物質の線減弱係数$\mu$に従って、各ピクセルのCT値は一様に等しく計算されるはずである。しかし、実際は諸因子に由来する統計的な変動（揺らぎ）によってCT値はばらついて一定とならず、この揺らぎ成分を一般的に画像ノイズと呼ぶ。この画像ノイズは直感的にも推察されるように投影データのノイズの比例する。ここでは投影データのノイズはX線量子の統計的変動が支配的である。X線量子の統計的変動とは次のようなものである。完全な計測系を用いて到来フォロン数の計測を繰り返しても、結果は毎回異なる。個々のX線フォトンが被写体内で減弱していくプロセスは確率現象であるためであり、一般的にポアソン分布に従うと仮定される。各回のフォトン数計測値が$N$個であるとし、平均して$\langle N \rangle$個が計測されたとする。$N$は$\langle N \rangle$を中心に誤差$\varepsilon_N$でばらつくが、この$\varepsilon_N$がX線量子の統計的変動である。$\varepsilon_N$の標準偏差を$\sigma_N$とすれば、ポアソン分布を仮定しているので$\sigma_N=\sqrt{\langle N \rangle}$である。誤差のない測定系であっても計測データのS/N比はX線量子の統計的変動で決まる物理限界$\langle N \rangle/\sigma_N=\sqrt{\langle N \rangle}$を超えることはできない。\\
 ここで、検出器・DASは完璧でなくノイズ$\varepsilon_d$を伴うが、その場合の投影データのノイズレベルを求めてみる。CTのX線計測は様々なエネルギーの混じった混合エネルギースペクトルの多色X線の吸収線量計測であるが、ここでは簡単のためにフォトンカウンティングモードでの計測であるとする。被写体へ入射X線フォトン数を$N_{\rm in}$とする。\Eref{eq:touei}よりノイズがなければ投影データの値は
 \begin{align}
@@ -147,7 +186,16 @@ p_{\rm actual}&\approx-\ln{\langle N \rangle}-\frac{\varepsilon_N+\varepsilon_d}
 \langle N \rangle\ll\sigma_dのとき\ \ \ \sigma_p\approx\frac{\sigma_d}{\sqrt{\langle N \rangle}}\label{eq:ijou}
 \end{align}
 \Eref{eq:normal}が通常の運用状態である。ここではX線量子の統計的変動だけが投影データ（すなわちCT画像の）ノイズ起源で画像ノイズは検出線量の平方根に反比例する。\\
-\Eref{eq:ijou}のような状況では、画像ノイズは検出線量に反比例して変化する。これは一種の異常事態であり、大きな被写体であるにもかかわらず過度に照射線量を減らしたり薄いコリメーション幅とした場合には発生しうる。その場合、画像ノイズのみならず別種の画質問題も顕在化することがあり、診断に耐える画像は得られない。
+\Eref{eq:ijou}のような状況では、画像ノイズは検出線量に反比例して変化する。これは一種の異常事態であり、大きな被写体であるにもかかわらず過度に照射線量を減らしたり薄いコリメーション幅とした場合には発生しうる。その場合、画像ノイズのみならず別種の画質問題も顕在化することがあり、診断に耐える画像は得られない。\\
+X線量子の統計的変動に関与する要因は
+\begin{enumerate}
+\item 線質（管電圧）
+\item 管電流
+\item 撮影時間
+\item ピッチ
+\item detector configuration(colimation)
+\end{enumerate}
+があげられる。またX線量子の統計的変動が画像ノイズの最大要因であるが、画像再構成・画像処理（再構成スライス厚、再構成法、フィルタ関数）によっても画像ノイズは変動する。
 
 \if0
 %森田バージョン
@@ -171,18 +219,58 @@ SD\propto\frac{1}{\sqrt{n}}
 \item その他(架台振動、管球焦点移動なども影響がある。マルチスライスCTの登場により再構成方法も多様化し、これらの様々な要因によっても空間分解能が変化する。)
 \end{enumerate}
 
-\subsection{高コントラスト分解能ファントムによる空間分解能評価}
+\subsubsection*{高コントラスト分解能ファントムによる空間分解能評価}
+
+\begin{wrapfigure}{r}{90mm}
+ \begin{center}
+ \includegraphics[bb=0 0 760 640,width=0.4\hsize]{image2/chapter5/high_contrast_phantom.png} 
+ \end{center}
+ \caption{高コントラスト分解能\\ファントムの例}
+ \label{fig:high_contrast_phantom}
+\end{wrapfigure}
 一般的な評価ファントムとしては、\Fref{fig:high_contrast_phantom}のようにアクリル樹脂などの中に空気の穴(直径$d$)がピッチ$2d$で配列されたものが用いられる。これをCT撮影して再構成を行い画像上で$d$の穴が分離して見えるか見えないかという主観的な評価を行う。この評価においては定量性には欠けるが穴が細くなる、つまり入力信号の周波数が大きくなるにつれて応答性が次第に低下していることなどもわかる。例えば0.5mmの径であれば、空間周波数1.0 Lp/mmにおける応答を見ていることになる。下がって、それぞれの径に対応する空間周波数における応答を比較することができる。しかし、本法では空間周波数ごとの応答を定量的な数値で表すことはできず、本法で評価してるのは識別限界となる最高周波数のみである。
 
-\subsection{MTFによる空間分解能評価}
+
+
+\subsubsection*{MTFによる空間分解能評価}
 上述の高コントラスト分解能ファントムによる評価では、「どのくらい細いものを分離して認識できているか」という主観的な視覚評価であった。一方で変調伝達関数(Modulation Transfer Function: MTF)では「見える、見えない」といった主観的な要素はなう、また周波数領域について定量的、客観的に評価が行える。MTFとは入力信号に対して、出力信号が「どれだけボケたか」を周波数成分ごとに数値化したものである。MTFを求める入力信号としては、店信号を入力する点像強度分布（Point Spread Function : PSF）と線信号を入力する線像強度分(Line Spread Function : LSF)がある。ここでは最も一般的な手法であるワイヤ法という、スライス面と垂直に張ったごく細い金属ワイヤの断面をCTで撮像し、得られたPSFからMTFを求める手法について詳細に述べる。\\
-PSFから求めるMTFとは「何もないところに突然ある限りなく0に近い幅で無限大のCT値を持つ入力信号」が「どのようにボケたのか」ということを示したものである。この場合の極めて特殊な入力信号をインパルス信号と呼ぶ。「どのようにボケたのか」ということを評価するために、ボケによって得られた分布すなわちPSFをフーリエ変換す流ことで周波数空間における応答値が得ることができる。インパルス波形を理想的なデルタ関数とすれば、これをフーリエ変換すると全周波数領域で大木さは1となる(\Fref{fig:delta})。デルタ関数を扇形システムい入力したときの出力をインパルス応答という。システムを通過したときのボケにより広がった形状のインパルス応答をフーリエ変換したものが周波数応答関数であり、その絶対値がMTFである。\\
+PSFから求めるMTFとは「何もないところに突然ある限りなく0に近い幅で無限大のCT値を持つ入力信号」が「どのようにボケたのか」ということを示したものである。この場合の極めて特殊な入力信号をインパルス信号と呼ぶ。「どのようにボケたのか」ということを評価するために、ボケによって得られた分布すなわちPSFをフーリエ変換す流ことで周波数空間における応答値が得ることができる。インパルス波形を理想的なデルタ関数とすれば、これをフーリエ変換すると全周波数領域で大きさは1となる(\Fref{fig:delta})。デルタ関数を線形システムに入力したときの出力をインパルス応答という。システムを通過したときのボケにより広がった形状のインパルス応答をフーリエ変換したものが周波数応答関数であり、その絶対値がMTFである。\\
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 507.798022 196.303772,width=0.6\hsize]{image2/chapter5/delta.png} 
+ \end{center}
+ \caption{デルタ関数のフーリエ変換}
+ \label{fig:delta}
+\end{figure}
+
 デルタ関数をフーリエ変換した時の全周波数領域での大きさが1であることから、広がった形状のインパルス応答をフーリエ変換して得られた応答値は、ボケによって低下したレベルや、微小構造描出のために特定の周波数を強調しているような状況が周波数成分ごとにその比率としてMTF上に示される。\\
-CTに於いてはスライス面と垂直に張ったごく細いワイヤは、ワイヤのある位置においてX線がほとんど不透過であるので、線減弱係数は非常に大きくなる。よって、ワイヤーの径が非常に小さければ、それによって近似的な2次元のインパルス信号が得られ(\Fref{fig;inpulse}(左))、その信号がCTシステムによってボケを受けた出力信号がCT画像上に現れたワイヤの画像、すなわちPSFである(\Fref{fig;inpulse}(右))。このPSFを直接2次元フーリエ変換するか、LSFに変換して1次元フーリエ変換をsして周波数応答を求めるのがワイヤ法である。\Fref{fig:MTF_outou}は、3種類のLSFに対するMTFを示している。この図では、幅が狭く急峻なLSFほど高いMTFとなっており、直感的にもわかりやすい。この幅が狭くなり最後にインパルス信号そのものになれば、MTFは高周波成分まで1.0となり理想的な状態となる。
+CTに於いてはスライス面と垂直に張ったごく細いワイヤは、ワイヤのある位置においてX線がほとんど不透過であるので、線減弱係数は非常に大きくなる。よって、ワイヤーの径が非常に小さければ、それによって近似的な2次元のインパルス信号が得られ(\Fref{fig:inpulse}(左))、その信号がCTシステムによってボケを受けた出力信号がCT画像上に現れたワイヤの画像、すなわちPSFである(\Fref{fig:inpulse}(右))。このPSFを直接2次元フーリエ変換するか、LSFに変換して1次元フーリエ変換をsして周波数応答を求めるのがワイヤ法である。\Fref{fig:MTF_outou}は、3種類のLSFに対するMTFを示している。この図では、幅が狭く急峻なLSFほど高いMTFとなっており、直感的にもわかりやすい。この幅が狭くなり最後にインパルス信号そのものになれば、MTFは高周波成分まで1.0となり理想的な状態となる。
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0 0 1000 893,width=1\hsize]{image2/chapter5/inpulse.png} 
+ \end{center}
+ \caption{インパル信号とインパル応答(PSF)およびそれぞれのMTF}
+ \label{fig:inpulse}
+\end{figure}
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0 0 1000 323,width=1.0\hsize]{image2/chapter5/MTF_outou.png} 
+ \end{center}
+ \caption{各インパルス応答と対応するMTFの関係}
+ \label{fig:MTF_outou}
+\end{figure}
 
 
 
 \subsection{低コントラスト分解能評価}
+周囲と比べてCT値差が小さく、かつ寸法の小さな物体を描出する能力を低コントラスト分解能という。評価用ファントムとしては背景となる物質の中にそれとわずかにCT値が異なる組織の構造を埋め込んだものが用いられる。低コントラスト分解能は主にコントラスト値（どれだけ大きなコントラストをつけて描出できるか）と画像ノイズが支配的である。したがって、画像ノイズに影響する因子は全て低コントラスト分解能の因子でもある。低コントラスト分解能を定量的に評価するために一般的に対象物質のCT値$\mu_M$と背景のCT値$\mu_B$の差を背景の画像ノイズ$\sigma_B$で割った、CNR(Contrast-noise-ratio: CNR)という値が用いられる。
+\begin{align}
+CNR = \frac{\mu_M-\mu_B}{\sigma_B}
+\end{align}
+CNRが高ければ高いほど、CT値が近い物質を明確に区別できるということになる。
 
 \section{従来のエネルギー積分型X線CTの問題点\label{sec:problem}}
 
@@ -192,12 +280,12 @@ I_d&\gg I_s\\
 60\time40\times0.5\times1.6\times10^{-19} [C] \times I_x&\gg100\times10^{-12}\\
 I_x&\gg 5.2\times10^5
 \end{align}
-程度となる。また読み出し回路を通ることでさらにノイズが増大することを考えれば被写体を透過した時点で$10^{6}$cts/s/mm$^2$のレートが必要になる。人体透過後は線量は約1/1000になるので\footnote{人体を水と透過と考え60keVにおける水の線減弱係数は0.206[1/cm]、人体を30cmとすれば$e^{-\mu L}\sim1/1000$となる。}必要な照射線量は$10^{8-9}$cts/s/mm$^2$と膨大になる。このためX線CTによる医療被ばく量は膨大であり一回の撮影での被ばく量は10mSvにもおよぶ。また、このような超高線量下おいては様々なエネルギーの混ざった混合エネルギーのX線のそれぞれの反応パルスイベントを区別するのは困難であり、読み出し方法はある一定時間電荷を積分した電流モードである。そのため個々のX線光子のエネルギー情報は完全に失われてしまう。\\
+程度となる。また読み出し回路を通ることでさらにノイズが増大することを考えれば被写体を透過した時点で$10^{6}$cts/s/mm$^2$のレートが必要になる。人体透過後は線量は約1/1000になるので\footnote{人体を水と透過と考え60keVにおける水の線減弱係数は0.206[1/cm]、人体を30cmとすれば$e^{-\mu L}\sim1/1000$となる。}必要な照射線量は$10^{8-9}$cts/s/mm$^2$と膨大になる。このためX線CTによる医療被ばく量は膨大であり一回の撮影での被ばく量は10mSvにもおよぶ。また、このような超高線量下おいては様々なエネルギーの混ざった混合エネルギーのX線のそれぞれの反応パルスイベントを区別するのは困難であり、読み出し方法はある一定時間電荷を積分した電流モードである。そのため個々のX線光子のエネルギー情報は完全に失われてしまうため、得られる画像はCT値のみを一つのパラメーターとするモノクロ画像となってしまう。電流モードつまりエネルギー積分型に読み出していることにより以下の2つがCT誕生当初から問題となっていた。
 
 
-
-
+\if0
 先述のように，従来のX線CTでは透過X線の検出において，電流モードつまりX線フォトンによって生成した電荷を所定時間蓄積し，電流信号を出力する方式を用いている。そのため従来型X線CTは「エネルギー積分型」と呼ばれ，各エネルギーのX線光子がどれくらい透過してきたのかというエネルギー情報は失ってしまう。しかし，人体中の元素は低原子の組織が中心であるため，X線の減弱は原子番号に依存するコンプトン散乱が支配的であるため，混合エネルギーのX線は低・高エネルギーでもある物質中で一定の割合で減衰するため線質はあまり変化しない。したがって，透過物質の実効エネルギーに対する線源弱係数はある程度正確に求めることができる。そのため長年にわたって個々のX線光子のエネルギーの計測は行われなかった。しかし，以下に述べる2点がCT誕生時からの問題点として挙げられる。
+\fi
 
 \subsection{CT値が同一である物質の弁別が困難}
 CT値は，物質の「質量減弱係数」と「密度」の積である線源弱係数により決定されることを述べた。質量減弱係数はX線エネルギーが一定であれば物質固有の値(\Fref{fig:atten}左)であるが，CT値を決定する線減弱係数は物質の密度にも依存するため，撮像対象物の密度状態によっては物質が異なっても(原子番号が異なっても)CT値が同一になってしまうことがある(\Fref{fig:atten}右)。通常のCTでは，CT値が唯一のパラメータであるため，物質の正確な弁別は困難と言える。
@@ -343,7 +431,7 @@ CTには低・高2種類の混合エネルギーのX線を照射するデュア�
 \end{figure}
 
 
-\subsubsection{ノイズの低減(SN比の向上)}
+\subsubsection{ノイズの低減(SN比の向上)\label{sec:pulse_merit}}
 フォトンカウンティング方式にすることによって電子的なノイズを低減することができる。データの計測時には，アナログ系の電子的ノイズが混入し，その計測値に誤りを発生させるこになる。\Fref{fig:noise_affect}(a)は70kVのX線管から発生したX線の理想的なエネルギースペクトルと，ある量の水を透過した後のエネルギースペクトルを模式的に示したものである。実際の計測においては計測対象の透過X線は，X線発生時における統計的な変動，高圧や管電流の揺らぎの影響を受け，さらに計測時に混入する電子的ノイズによって\Fref{fig:noise_affect}(b)のようなスペクトルおを計測することになる。この時，従来のエネルギー積分型の計測を行うとそのノイズ成分は加算され影響を与えることになるが，フォトンカウンティング型ではエネルギー帯域ごとX線光子が個数としてカウントされるので，ノイズの影響は受けにくくなる。このような電子的ノイズが大きく影響を与えるのは，計数時のX線の強度が非常に小さくなる場合である。
 
 \begin{figure}[H]
