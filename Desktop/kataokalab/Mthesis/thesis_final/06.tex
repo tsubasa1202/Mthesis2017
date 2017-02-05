@@ -14,9 +14,9 @@ $^{57}$Coと$^{241}$Amを用いてMCA-8000Dで測定したスペクトルを\Fre
 
 \begin{figure}[H]
  \begin{center}
- \includegraphics[bb=0.000000 0.000000 596.000000 574.000000,width=0.5\hsize]{image2/chapter5/YAP_MPPCsignal.png} 
+ \includegraphics[bb=0.000000 0.000000 596.000000 536.000000,width=0.5\hsize]{image2/chapter5/57Co_YAP_Raw_wave.png} 
  \end{center}
- \caption{MPPCで読み出したCe:YAPの波形}
+ \caption{$^{57}$Coを照射したときのMPPCで読み出したCe:YAPの波形}
  \label{fig:YAP_waveform}
 \end{figure}
 
@@ -43,6 +43,16 @@ $^{57}$Coと$^{241}$Amを用いてMCA-8000Dで測定したスペクトルを\Fre
  \end{center}
  \caption{多色イメージングのエネルギー弁別回路($V_{th4}>V_{th3}>V_{th2}>V_{th1}$)}
  \label{fig:read_circuit_pulse_multi}
+\end{figure}
+
+例えば閾値に$V_{th1}=30keV, V_{th2}=60keV, V_{th3}=90keV,$に設定したとき、それぞれの閾値を超える波高を持つ信号の例を\Fref{fig:120kV_0.1mA_multi_th}に示す。
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 696.000000 474.000000,width=0.7\hsize]{image2/chapter5/120kV_0.1mA_multi_th.png} 
+ \end{center}
+ \caption{$V_{th1}=30keV, V_{th2}=60keV, V_{th3}=90keV,$に設定したとき、それぞれの閾値を超える波高を持つ信号の例}
+ \label{fig:120kV_0.1mA_multi_th}
 \end{figure}
 
 最大で4つの閾値を設けることが可能となる。\Fref{fig:spectrum_multi}示したようにBin1-Bin4まで複数のエネルギー帯域に置いて投影データを作成、それぞれのBinにおいて画像再構成を行う。それぞれのBinにおけるイベントは以下のように求めた。

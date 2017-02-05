@@ -59,15 +59,68 @@ PDとAPDでは同一の素子を用いて、印加電圧を変えることでPD�
 
 \begin{figure}[H]
  \begin{center}
- \includegraphics[width=7cm]{image2/chapter5/apd_gain.eps}
+ \includegraphics[width=10cm]{image2/chapter5/apd_gain.eps}
  \end{center}
  \caption{APDのゲイン特性（at 25℃）※rootの画像に差し替える}
  \label{fig:apd_gain}
 \end{figure}
 
+%暗電流
+また用いた素子の、暗電流大きさと管電圧120kV、管電流0.1mAを照射したときの書く素子の電流値の大きさを\Tref{tab:dark_current}に示す。
+
+
+\begin{table}[H]
+  \centering
+  \caption{各素子の暗電流値と管電圧120kV、管電流0.1mAを照射したときの出力電流}
+    \begin{tabular}{cccc}
+    \toprule
+          & PD    & APD   & MPPC \\
+    \midrule
+    暗電流($I_d$) & $\sim$5.98\ [nA] & $\sim$31.2\ [nA] & $\sim$73.1\ [nA] \\
+    X線照射時出力電流($I_{out}$) & $\sim$6.04\ [nA] & $\sim$33.0\ [nA] & $\sim$0.013\ [mA] \\
+    $信号電流(I = I_{out} - I_d)$ & $\sim$0.06\ [nA] & $\sim$1.74\ [nA] & $\sim$0.013\ [mA] \\
+    $S/N(I/I_d)$ & $\sim$0.01  & $\sim$0.05  & $\sim$182  \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+\if0
+\begin{table}[H]
+  \centering
+  \caption{各素子の暗電流}
+    \begin{tabular}{cccc}
+    \toprule
+    PD    & APD   & MPPC \\
+    \midrule
+    暗電流&$\sim$11.5\ [pA] & $\sim$235.0\ [pA]  & $\sim$400\ [nA]  \\
+     管電圧120kV、管電流0.1mA\\照射時電流&$\sim$6.03\ [nA] & $\sim$32.72\ [nA]  & $\sim$0.013\ [mA]  \\
+    
+    \bottomrule
+    \end{tabular}%
+  \label{tab:dark_current}%
+\end{table}%
+
+また管電圧120kV、管電流0.1mAを照射したときの書く素子の電流値の大きさを\Tref{tab:soshi_current}に示す。
+
+\begin{table}[H]
+  \centering
+  \caption{各素子の管電圧120kV、管電流0.1mAを照射した時の電流値}
+    \begin{tabular}{ccc}
+    \toprule
+    PD    & APD   & MPPC \\
+    \midrule
+    $\sim$6.03\ [nA] & $\sim$32.72\ [nA]  & $\sim$0.013\ [mA]  \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:soshi_current}%
+\end{table}%
+
+\fi
+
 
 %読み出し回路
-またMPPCにおいては従来のエネルギー積分型の読みだし方法である「電流モード」と、X線透過光子一つ一つのエネルギーを弁別する「パルスモード」での画像取得を行った。電流モードにおいてはKeithley237を用いて検出器からの電流値を一定間隔で読み出すことで投影データを取得した。パルスモードにおいてはMPPCからの信号をアンプを用いて10倍に増幅し、整形アンプ（時定数100ns）を通り、コンパレーターで閾値を設定しパルスを生成し、カウンタカードでそれをカウントした。また、パルスモードに置いては浜松フォトにクスの温度保証モジュールを用いた。実験のセットアップを\Fref{fig:CTsetup}に、電流モードとパルスモードの読み出し回路を\Fref{fig:read_circuit_current}と\Fref{fig:read_circuit_pulse}にそれぞれ示す。
+またMPPCにおいては従来のエネルギー積分型の読みだし方法である「電流モード」と、X線透過光子一つ一つのエネルギーを弁別する「パルスモード」での画像取得を行った。電流モードにおいてはKeithley237を用いて検出器からの電流値を一定間隔で読み出すことで投影データを取得した。パルスモードにおいてはMPPCからの信号をアンプを用いて10倍に増幅し、整形アンプ（時定数100ns）を通り、コンパレーターで閾値を20keVに設定し、その閾値を越えたパルスの数をカウンタカードで測定した。また、パルスモードに置いては浜松フォトにクスの温度保証モジュールを用いた。実験のセットアップを\Fref{fig:CTsetup}に、電流モードとパルスモードの読み出し回路を\Fref{fig:read_circuit_current}と\Fref{fig:read_circuit_pulse}にそれぞれ示す。
 
 \begin{figure}[H]
  \begin{center}
@@ -130,7 +183,7 @@ X線ジェネレーター（トーレック TRIX-150LE）の照射口から被�
 本稿では各素子を用いてCT撮影を行い、画像ノイズ評価、低コントラスト分解能評価、空間分解能評価を行った。
 
 \section{画像ノイズ評価}
-CTに於けるノイズ特製の評価は一般に水ファントムを撮影することで行われる、被写体として、直径6cmのアクリル筒の中に水（1.0g/cm$^3$）を満たした均一なファントムを用いた（\Fref{fig:SD_phantom}）。このファントムを管電圧120kV、管電流0.5mAでCT撮影しそれぞれの素子を用いて得られたCT画像を比較した。撮影したCT画像を\Fref{fig:SD_result}に示す。
+CTに於けるノイズ特製の評価は一般に水ファントムを撮影することで行われる、被写体として、直径6cmのアクリル筒の中に水（1.0g/cm$^3$）を満たした均一なファントムを用いた（\Fref{fig:SD_phantom}）。このファントムを管電圧120kV、管電流0.1mA（real is 0.5mA）でCT撮影しそれぞれの素子を用いて得られたCT画像を比較した。このときの測定レートは$\sim$撮影したCT画像を\Fref{fig:SD_result}に示す。
 
 \begin{figure}[H]
  \begin{center}
@@ -176,7 +229,7 @@ CTに於けるノイズ特製の評価は一般に水ファントムを撮影す
   \end{center}
 \end{figure}
 
-また、関心領域(Resion of Interest : ROI)を\Fref{fig:SD_ROI}のように定める。半径$r$の水ファントムを撮影した画像の中心およびその周辺部の上下左右へ中心から5箇所におけるSDを画像解析ソフトImageJを用いて算出し、各ROIにおいて平均との割合($SD_i/\mu_{\rm mean}\ i=1,2,3,4,5$)をもとめ、5つの平均を取った値を求めた。その結果を\Tref{tab:SD_result}に示す。
+また、関心領域(Resion of Interest : ROI)を\Fref{fig:SD_ROI}のように定める。半径$r$の水ファントムを撮影した画像の中心およびその周辺部の上下左右へ中心から5箇所におけるSDを画像解析ソフトImageJを用いて算出し、各ROIにおけるCT値との割合($SD_i/\mu_i\ i=1,2,3,4,5$)をもとめ、5つの平均を取った値を求めた。その結果を\Tref{tab:SD_result}に示す。
 
 \begin{figure}[H]
  \begin{center}
@@ -186,7 +239,16 @@ CTに於けるノイズ特製の評価は一般に水ファントムを撮影す
  \label{fig:SD_ROI}
 \end{figure}
 
-内部増幅を持つ、APD,MPPCは内部増幅を持たないPDに比べて、画像ノイズが少なく均一な画像が得られていることがわかる。これは素子の「内部増幅機能」により、高いS/Nを実現しノイズ（暗電流）の影響が著しく低減されるためである。また、パルスモードにおいてはさらに画像がノイズが低減されており、これは電流読み出しにおいては回路ノイズなどの計測時に混入する電子的なノイズを全て積分していた、パルスモードではエネルギー帯域ごとにX線光子が個数としてカウントされるので、それらのノイズの影響を受けにくくなったためであると考えられる。
+
+※表を載せる。\\
+
+
+内部増幅を持つ、APD,MPPCは内部増幅を持たないPDに比べて、画像ノイズが少なく均一な画像が得られていることがわかる。また、MPPCパルスモードにおいてはさらに画像ノイズが低減されていることがわかる。よし詳細な考察は次章と共通であるため、次章で述べる。
+
+
+\if0
+これは素子の「内部増幅機能」により、高いS/Nを実現しノイズ（暗電流）の影響が著しく低減されるためである。また、パルスモードにおいてはさらに画像ノイズが低減されており、これは電流読み出しにおいては回路ノイズなどの計測時に混入する電子的なノイズを全て積分していたが、パルスモードではエネルギー帯域ごとにX線光子が個数としてカウントされるので、それらのノイズの影響を受けにくくなったためであると考えられる\ref{sec:pulse_merit}。一方で、APDとMPPC電流モードを比較した時にはAPDの方がSDガ小さいことがわかる。これはMPPCにおいては大電流が流れることでMPPCの温度変動がおき、それによってMPPCのゲインが変動し、画像ノイズとして現れたと考えられる。
+\fi
 
 
 \section{低コントラスト分解能評価}
@@ -279,7 +341,7 @@ CNR= \frac{\mu_B-\mu_M}{\sigma_B}\label{eq:cnr}
   \label{tab:cnr}%
 \end{table}% 
 
-電流モードにおいてMPPCとAPDのCNRはPDよりも高いことがわかる。これは内部増増幅機能により暗電流よりも遥かに高い信号電流が得られたからである。また、MPPCパルスモードにおいては突出してCNRが高いことがわかる。これは、内部増幅機能に加えて、パルス読み出しをしたことにより、信号のノイズ成分を除去することができたらからであると考えられる。
+電流モードにおいてMPPCとAPDのCNRはPDよりも高いことがわかる。これは素子の「内部増幅機能」により、高いS/Nを実現しノイズ（暗電流）の影響が著しく低減されるためである。また、MPPCパルスモードにおいては突出してCNRが高いことがわかる。これは、内部増幅機能に加えて、パルス読み出しをしたことにより、信号のノイズ成分を除去することができたらからであると考えられる。
 
 次に管電圧120kVは固定し、管電流を0.1mAから1.0mAまで変化させたときのCNRをPD、APD、MPPC（電流）、MPPC（パルス）で測定した。その結果を\Fref{fig:cnr_current}に示す。
 
@@ -294,8 +356,47 @@ CNR= \frac{\mu_B-\mu_M}{\sigma_B}\label{eq:cnr}
 \end{figure}
 
 
-まずどの素子においても管電流が上がるにつれてCNRが向上していることがわかる。これは管電流が増えるにつれて\ref{sec:noise}で述べたように検出線量が増えたことで、SDが減少したからである。また、電流モードにおいてはCNRはMPPC$>$APD$>$PDとなっており、内部増幅が増大することでCNRが高くなっていることがわかる。これは内部増幅機能によって暗電流が著しく低減されたためであると考えられる。しかし、APDとMPPC電流モードを比較するとそのCNRの値は、MPPC電流モードの方がわずかに高い程度である。これはMPPCにおいては$\sim$mAの電流が流れるが、本実験ではMPPCの電流モードの読み出しでは温度補償モジュールをつけていなため、MPPCの温度が上昇し、ゲインが変動し画像ノイズとして現れたためであると考えられる。さらなる高いCNRを得るためには温度補償モジュールをつけ、温度を一定に保つ必要がある。\\
-MPPCのパルス読出しでは、線量を増やし高レートになると、統計が増えることで電流モードと同じくノイズの減少した画像は得られるが、波形が重なるパイルアップが生じ、エネルギー情報が取得できなくなる。そのため低線量下のみでしか測定していないが、その低線量下においても他の素子に比べて圧倒的に高い低コントラスト分解能が得ることができた。これは\ref{sec:pulse_merit}でも述べたが、電流モードではX線発生時における統計的な変動，高圧や管電流の揺らぎ，さらに計測時に混入する電子的ノイズなどのノイズ成分は全て加算されCT画像に影響を与えることになるが、パルスモードにしたことによりそれらのノイズの影響を受けにくくなったためであると考えられる。MPPCパルスモードにおけるCNRは従来のX線CTに用いられるPDの約15倍であり、$CNR\propto 1/SD\propto\sqrt{n} $なのでCNRが15倍とうことは、PDではMPPCのCNRを実現するために200倍以上の線量が必要となる。逆に言えばMPPCではPDの線量の1/200で同等のCNRを実現することができる。
+まずどの素子においても管電流が上がるにつれてCNRが向上していることがわかる。これは管電流が増えるにつれて\ref{sec:noise}で述べたように検出線量が増えたことで、SDが減少したからである。また、電流モードにおいてはCNRはMPPC$>$APD$>$PDとなっており、内部増幅が増大することでCNRが高くなっていることがわかる。これは内部増幅機能によって暗電流が著しく低減されたためであると考えられる。しかし、APDとMPPC電流モードを比較するとそのCNRの値は、MPPC電流モードの方がわずかに高い程度である。これはMPPCにおいては$\sim$mAの電流が流れるが、本実験ではMPPCの電流モードの読み出しでは温度補償モジュールをつけていなため、測定中に流れる電流の大きさに応じてMPPCの温度が変動することで、ゲインが変動し画像ノイズとして現れたためであると考えられる。\Fref{fig:ondo_henka}にファントム測定中の管電流0.1mAと1.0mAにおけるMPPCの温度変化を示す。温度変化の測定においては浜松フォトニクスの温度補償モジュールに付属している、温度センサーを読みだした。また、\Fref{fig:MPPC_tmp}にMPPCの温度ゲインの関係を示す。
+
+
+\begin{figure}[H]
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[bb=0.000000 0.000000 801.000000 692.000000,width=0.9\hsize]{image2/chapter5/MPPC_tmp.png} 
+  \end{center}
+  \vspace{-1cm}
+  \caption*{ファントム測定中のMPPCの温度変化}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+ \includegraphics[bb=0.000000 0.000000 801.000000 692.000000,width=0.9\hsize]{image2/chapter5/MPPC_tmp.png} 
+  \end{center}
+  \vspace{-1cm}
+  \caption*{}
+ \end{minipage}
+ \begin{center}
+  \caption{}
+  \label{fig:MPPC_tmp}
+  \end{center}
+\end{figure}
+
+さらなる高いCNRを得るためには温度補償モジュールをつけ、温度を一定に保つ必要がある。\\
+MPPCのパルス読出しでは、線量を増やし高レートになると、統計が増えることで電流モードと同じくノイズの減少した画像は得られるが、波形が重なるパイルアップが生じ、エネルギー情報が取得できなくなる。そのため低線量下のみでしか測定していないが、その低線量下においても他の素子に比べて圧倒的に高い低コントラスト分解能が得ることができた。これは\ref{sec:pulse_merit}でも述べたが、電流モードではX線発生時における統計的な変動，高圧や管電流の揺らぎ，さらに計測時に混入する電子的ノイズなどのノイズ成分は全て加算されCT画像に影響を与えることになるが、パルスモードにしたことによりそれらのノイズの影響を受けにくくなったためであると考えられる。X線スペクトルをMPPCで閾値を設定せずに測定した結果と、閾値を20keVにせってした時のX線スペクトルを\Fref{fig:Xray_spectrum}に示す。閾値を設定しない時は低エネルギーに多くのノイズが存在していることがわかり、電流モードではこれを全て積分しているがパルスモードでは閾値を20keVに設定することでこれらのノイズを低減することができ、画像ノイズが向上したと考えられる。
+
+
+
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 828.000000 686.000000,width=1\hsize]{image2/chapter5/Xray_spectrum.png} 
+ \end{center}
+ \caption{(a)エネルギー閾値を設定しなかったときのX線スペクトル、(b)エネルギー閾値を20keVに設定したときのX線スペクトル(H.Morita \& T.Oshima et.,al)}
+ \label{fig:Xray_spectrum}
+\end{figure}
+
+
+
+MPPCパルスモードにおけるCNRは従来のX線CTに用いられるPDの約15倍であり、$CNR\propto 1/SD\propto\sqrt{n} $なのでCNRが15倍とうことは、PDではMPPCのCNRを実現するために200倍以上の線量が必要となる。逆に言えばMPPCではPDの線量の1/200で同等のCNRを実現することができる。
 
 \if0
 CNRは定義から明らかであるが$\sigma$に反比例する。$N$を統計量とすると$\sigma\propto1/\sqrt{N}$であるためCNRは$\sqrt{N}$に比例するはずである。累乗近似を用いて、指数を求めるとほぼ0.5になる、（図の中に今は示してません。）
@@ -360,7 +461,7 @@ CNRは定義から明らかであるが$\sigma$に反比例する。$N$を統計
 
 
 \subsection{MTFによる評価}
-定量的な空間分解能の評価指標としてMTF(modulation transfer function)を用いて、それぞれの素子の空間分解能を定量的に評価した。測定に用いたファントムは水で満たした直径6cmのアクリル筒の中に、素子のサイズ(1mm$\times$1mm)より、十分細い200$\mu$mのタングステンワイヤーが中心にある\Fref{fig:MTF_phantom}のようなファントムを用いた。
+定量的な空間分解能の評価指標としてMTF(modulation transfer function)を用いて、それぞれの素子の空間分解能を定量的に評価した。インパルス信号として、水で満たした直径6cmのアクリル筒の中に、素子のサイズ(1mm$\times$1mm)より、十分細い200$\mu$mのタングステンワイヤーが中心にある\Fref{fig:MTF_phantom}のようなファントムを用いた。
 
 \begin{figure}[H]
  \begin{center}
@@ -405,16 +506,48 @@ CNRは定義から明らかであるが$\sigma$に反比例する。$N$を統計
   \end{center}
 \end{figure}
 
-\Fref{fig:CT_MTF}から\Fref{fig:MTF_method}の手順でMTFを算出した結果を\Fref{fig:MTF_matome}に示す。
+さらに\Fref{fig:CT_MTF}に破線で示した領域におけるLSFを取得した結果を\Fref{fig:PSF_PD}と\Fref{fig:PSF_MPPC}に示す。左のLSFのノイズ成分を除去する作業(zeroing)を施したものが右のLSFである。
 
 
 \begin{figure}[H]
  \begin{center}
- \includegraphics[bb=0.000000 0.000000 1277.000000 789.000000,width=1\hsize]{image2/chapter5/MTF_matome.png} 
+ \includegraphics[bb=0.000000 0.000000 823.131954 361.410123,width=1\hsize]{image2/chapter5/PSF_PD.png} 
  \end{center}
- \caption{\Fref{fig:CT_MTF}から算出したMTF※MPPCの電流は0.1mAだけにあとで差し替える}
+ \caption{PDのPSF}
+ \label{fig:PSF_PD}
+\end{figure}
+
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 823.131954 361.410123,width=1\hsize]{image2/chapter5/PSF_MPPC.png} 
+ \end{center}
+ \caption{MPPCのPSF}
+ \label{fig:PSF_MPPC}
+\end{figure}
+
+\Fref{fig:PSF_PD}と\Fref{fig:PSF_MPPC}の右のLSFをフーリエ変換し、MTFを算出した結果を\Fref{fig:MTF_matome}に示す。ここで周波数間隔$\Delta f$はピクセルサイズ$\Delta p$と用いたピクセル数$n$を用いて、
+
+\begin{align}
+\Delta f = \frac{1}{\Delta p\times n}
+\end{align}
+と表せる。本実験では$\Delta p = 0.1\ {\rm [mm]}, n=256$なので$\Delta f = 0.039\ $[LP/mm]となる。
+
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 719.940485 485.719847,width=1\hsize]{image2/chapter5/MTF_MPPCcurrent_MPPCpulse_0.1mA.png} 
+ \end{center}
+ \caption{MTF}
  \label{fig:MTF_matome}
 \end{figure}
 
-MTFが0.1のときの値が目視での空間分解能と等しくなると言われており、\Fref{fig:MTF_matome}においてMPPCパルスモードではMTF0.1の時は$\sim$0.9LP/mm\footnote{X LP/mmの意味は1mmの中にXペアのラインがある、つまりX LP/mmの場合1ラインの幅は$d=1/2X$となる。}、つまり$\sim$0.5mmの穴が目視で分離できているように見えるということを意味している。\Fref{fig:fire}(d)を見ると、Φ0.5が目視での分離限界であり、\Fref{fig:MTF_matome}が示す結果と一致していると言える。
-       
+MTFが0.1のときの値が目視での空間分解能と等しくなると言われており、\Fref{fig:MTF_matome}においてMPPCパルスモードではMTF0.1の時は$\sim$0.9LP/mm、\footnote{X LP/mmの意味は1mmの中にXペアのラインがある、つまりX LP/mmの場合1ラインの幅は$d=1/2X$となる。}、つまり$\sim$0.5mmの穴が目視で分離できているように見えるということを意味している。\Fref{fig:fire}(d)を見ると、Φ0.5が目視での分離限界であり、\Fref{fig:MTF_matome}が示す結果と一致していると言える。また、臨床で用いられるCTのMTFの一例を\Fref{fig:MTF_rinshou}に示す。これを見るとMTF10\%における空間周波数は0.9LP/mmを下回っており、本実験で得られたMTFの結果の方が優れていることがわかり、0.1mAという超低線量下でも臨床現場で用いられるCTと劣らない解像度を実現することができたと言える。
+
+\begin{figure}[H]
+ \begin{center}
+ \includegraphics[bb=0.000000 0.000000 413.725799 413.725799,width=0.5\hsize]{image2/chapter5/MTF_rinsyou2.png} 
+ \end{center}
+ \caption{臨床で用いられるCTのMTFの一例}
+ \label{fig:MTF_rinshou}
+\end{figure}
