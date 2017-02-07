@@ -7,7 +7,7 @@
  \begin{center}
  \includegraphics[width=8cm]{image/other/CT_toshiba.eps}
  \end{center}
- \caption{CT装置の外観}
+ \caption{CT装置の外観\cite{toshiba_CT}}
  \label{fig:CT_toshiba}
 \end{wrapfigure}
 CTとはcomputed\ tomographyの略であり，日本語名称はコンピュータ断層撮影装置である。\Fref{fig:CT_toshiba}が典型的なCTの外観例である。X線管から連続エネルギースペクトルを持つX線が照射され，直進しながら物体中で減弱し，反対側にある検出器で減弱したX線の透過強度分布を測定する。そして，測定した透過強度分布から，X線の通しにくさを影絵にしたような投影データを取得する。この投影データをX線管と検出器を物体周りに回転して物体の多方向から取得し，フーリエ変換を用いて画像再構成し線減弱係数$\mu$の分布図としてCT画像を表示している。CT画像においては線源弱係数の高い組織は白く，線源弱係数の低し組織は黒く表示するのが慣例である。CTの方式には種々の方式があるが現在最も一般的なのは第三世代のファンビームを照射するX線源とそれに対向したX線検出器が被写体の周りを回るRotate/Rotate(R/R)方式であり，X線検出素子の数(チャンネル数)は現在は700-900程度になっており一回転のスキャン時間は0.3秒前後に達している。\\
@@ -18,7 +18,7 @@ CTとはcomputed\ tomographyの略であり，日本語名称はコンピュー�
 \begin{center}
 \begin{tabular}{cc} \hline
 項目 & 仕様 \\\hline
-フレームレート & 10，000 frame/sesc($\sim$120,000pixel/frame) \\
+フレームレート & 10,000 frame/sesc($\sim$120,000pixel/frame) \\
 動作モード & 電流モード(エネルギー積分型) \\
 シンチレータ & GOS($\sim$50,000ph/MeV) \\
 解像度 & $\sim$2.4lp/mm($\sim$0.210mm) \\
@@ -38,7 +38,7 @@ CTのX線検出器にシンチレータとフォトダイオード(PD)が用い�
  \begin{center}
  \includegraphics[bb=0.000000 0.000000 600.000000 622.00000,width=0.6\hsize]{image2/chapter5/colimater.png} 
  \end{center}
- \caption{CTの検出器の構造}
+ \caption{CTの検出器の構造\cite{mori}}
  \label{fig:colimater}
 \end{figure}
 
@@ -48,7 +48,7 @@ CTのX線検出器にシンチレータとフォトダイオード(PD)が用い�
  \begin{center}
  \includegraphics[bb=0.000000 0.000000 1000.000000 847.000000,width=0.6\hsize]{image2/chapter5/DAS.png} 
  \end{center}
- \caption{CTのDASの例。（少数のADCで全検出素子を分担する構成例）}
+ \caption{CTのDASの例。（少数のADCで全検出素子を分担する構成例）\cite{mori}}
  \label{fig:DAS}
 \end{figure}
 
@@ -71,13 +71,13 @@ DASに求めらる性能は以下のようなものがある。
 \section{画像再構成原理}
 現在のX線CTのX線管からはファンビームのX線が照射されるのが一般的であるが，ここでは簡単のため直線のX線ビームを用いて画像再構成原理を説明する(\Fref{fig:FBP})。
 
-\begin{wrapfigure}{l}{60mm}
+\begin{figure}[H]
  \begin{center}
  \includegraphics[width=6cm]{image/other/FBP.eps}
  \end{center}
  \caption{CTの画像再構成法の原理}
  \label{fig:FBP}
-\end{wrapfigure}
+\end{figure}
 
 最終的な目標は線源弱係数の分布$\mu(x，y)$を求めることである。\Fref{fig:FBP}において原画像$\mu(x,y)$と、計測データである投影データ$g(s,\theta)$の関係は次式のように定義される。
 \begin{align}
@@ -117,11 +117,11 @@ I_d(s，\theta)&=I_o(s，\theta)\exp{\left[-\int^{\infty}_{-\infty}\mu(x，y)dt\
   &= \int^{\pi}_{0}\int^{\infty}_{0}\hat{\mu}(\rho\cos{\theta}，\rho\sin{\theta})|\rho|e^{i2\pi\rho(x\cos{\theta} +y\sin{\theta} )}  d\rho d\theta\\
     &= \int^{\pi}_{0}\left\{\int^{\infty}_{0}P(\rho,\theta)|\rho|e^{i2\pi\rho s}  d\rho\right\} d\theta\label{eq:FBP_end}
 \end{align}
-と求まる。\Eref{eq:FBP_end}は投影データを一次元フーリエ変換し、\Fref{fig:ramp}のように空間周波数の絶対値で示される高周波数強調フィルタのランプ(ramp)フィルタ$|\rho|$を掛けた後に。一次元フーリエ逆変換を行い実空間に戻す。フィルタ補正した投影データを$\theta(0\leq\theta<\pi)$について逆投影し原画像$\mu(x,y)$を得る。フィルターの種類はいくつかあるが代表的な二つのフィルターを\Fref{fig:filter}にあげる。
+と求まる。\Eref{eq:FBP_end}は投影データを一次元フーリエ変換し、\Fref{fig:filter}(左)のような空間周波数の絶対値で示される高周波数強調フィルタのランプ(ramp)フィルタ$|\rho|$を掛けた後に。一次元フーリエ逆変換を行い実空間に戻す。フィルタ補正した投影データを$\theta(0\leq\theta<\pi)$について逆投影し原画像$\mu(x,y)$を得る。フィルターの種類はいくつかあるが代表的な二つのフィルターを\Fref{fig:filter}にあげる。
 
 \begin{figure}[H]
  \begin{center}
- \includegraphics[bb=0.000000 0.000000 600.000000 327.000000,width=1\hsize]{image2/chapter5/filter.png} 
+ \includegraphics[bb=0.000000 0.000000 600.000000 327.000000,width=0.8\hsize]{image2/chapter5/filter.png} 
  \end{center}
  \caption{CTの画像再構成用いられるフィルター}
  \label{fig:filter}
@@ -137,7 +137,7 @@ Rampフィルターは分解能に優れるがノイズを増強する。一方�
  \begin{center}
  \includegraphics[bb=0.000000 0.000000 400.000000 140.000000,width=0.8\hsize]{image2/chapter1/CT_value.jpg} 
  \end{center}
- \caption{様々な物質のCT値}
+ \caption{様々な物質のCT値\cite{mori}}
  \label{fig:CT_value}
 \end{figure}
 
@@ -147,7 +147,7 @@ CTの画質評価に主にどれくらい画像ノイズ評価、どれくらい
 
 \subsection{画像ノイズ評価\label{sec:noise}}
 X線CTで水ファントムのような一様な被写体を撮影した場合、その物質の線減弱係数$\mu$に従って、各ピクセルのCT値は一様に等しく計算されるはずである。しかし、実際は諸因子に由来する統計的な変動（揺らぎ）によってCT値はばらついて一定とならず、この揺らぎ成分を一般的に画像ノイズと呼ぶ。この画像ノイズは直感的にも推察されるように投影データのノイズの比例する。ここでは投影データのノイズはX線量子の統計的変動が支配的である。X線量子の統計的変動とは次のようなものである。完全な計測系を用いて到来フォロン数の計測を繰り返しても、結果は毎回異なる。個々のX線フォトンが被写体内で減弱していくプロセスは確率現象であるためであり、一般的にポアソン分布に従うと仮定される。各回のフォトン数計測値が$N$個であるとし、平均して$\langle N \rangle$個が計測されたとする。$N$は$\langle N \rangle$を中心に誤差$\varepsilon_N$でばらつくが、この$\varepsilon_N$がX線量子の統計的変動である。$\varepsilon_N$の標準偏差を$\sigma_N$とすれば、ポアソン分布を仮定しているので$\sigma_N=\sqrt{\langle N \rangle}$である。誤差のない測定系であっても計測データのS/N比はX線量子の統計的変動で決まる物理限界$\langle N \rangle/\sigma_N=\sqrt{\langle N \rangle}$を超えることはできない。\\
-ここで、検出器・DASは完璧でなくノイズ$\varepsilon_d$を伴うが、その場合の投影データのノイズレベルを求めてみる。CTのX線計測は様々なエネルギーの混じった混合エネルギースペクトルの多色X線の吸収線量計測であるが、ここでは簡単のためにフォトンカウンティングモードでの計測であるとする。被写体へ入射X線フォトン数を$N_{\rm in}$とする。\Eref{eq:touei}よりノイズがなければ投影データの値は
+ここで、検出器・DASは完璧でなくノイズ$\varepsilon_d$を伴うが、その場合の投影データのノイズレベルを求めてみる\cite{mori}。CTのX線計測は様々なエネルギーの混じった混合エネルギースペクトルの多色X線の吸収線量計測であるが、ここでは簡単のためにフォトンカウンティングモードでの計測であるとする。被写体へ入射X線フォトン数を$N_{\rm in}$とする。\Eref{eq:touei}よりノイズがなければ投影データの値は
 \begin{align}
 p_{\rm ideal}&=-\ln{\left(\frac{N}{N_{\rm in}}\right)}\\
 &=-\ln{N}+\ln{N_{\rm in}}\\
@@ -221,13 +221,13 @@ SD\propto\frac{1}{\sqrt{n}}
 
 \subsubsection*{高コントラスト分解能ファントムによる空間分解能評価}
 
-\begin{wrapfigure}{r}{90mm}
+\begin{figure}[H]
  \begin{center}
  \includegraphics[bb=0 0 760 640,width=0.4\hsize]{image2/chapter5/high_contrast_phantom.png} 
  \end{center}
  \caption{高コントラスト分解能\\ファントムの例}
  \label{fig:high_contrast_phantom}
-\end{wrapfigure}
+\end{figure}
 一般的な評価ファントムとしては、\Fref{fig:high_contrast_phantom}のようにアクリル樹脂などの中に空気の穴(直径$d$)がピッチ$2d$で配列されたものが用いられる。これをCT撮影して再構成を行い画像上で$d$の穴が分離して見えるか見えないかという主観的な評価を行う。この評価においては定量性には欠けるが穴が細くなる、つまり入力信号の周波数が大きくなるにつれて応答性が次第に低下していることなどもわかる。例えば0.5mmの径であれば、空間周波数1.0 Lp/mmにおける応答を見ていることになる。下がって、それぞれの径に対応する空間周波数における応答を比較することができる。しかし、本法では空間周波数ごとの応答を定量的な数値で表すことはできず、本法で評価してるのは識別限界となる最高周波数のみである。
 
 
@@ -270,7 +270,7 @@ MTFの測定手順を\Fref{fig:MTF_method}に示す。
  \begin{center}
  \includegraphics[bb=0.000000 0.000000 621.548619 408.446235,width=1\hsize]{image2/chapter5/MTF_method.png} 
  \end{center}
- \caption{MTFの測定手順}
+ \caption{MTFの測定手順\cite{ichikawa_web}\cite{ichikawa_book}}
  \label{fig:MTF_method}
 \end{figure}
 \fi
@@ -491,7 +491,7 @@ CTには低・高2種類の混合エネルギーのX線を照射するデュア�
   \end{center}
 \end{figure}
 \subsubsection*{媒質の同定}
-先述のように従来のエネルギー積分型のCTでは，線源弱係数は物質が異なっても密度によっては同一になる場合があり，パラメータは一つのCT値のみであったため正確な物質の弁別をすることができなかった。しかし，スペクトラルCTではいくつかのエネルギー帯においてCT値を取得することができるため，パラメータが複数になることで正確な材質の弁別が可能となる。例えば，ある領域に対して低エネルギーと高エネルギーによる線源弱係数を求めたとする。その比($\mu(E_{\rm Low})/\mu(E_{\rm High})$)の原子番号依存性は既知であり，対象組織の密度，厚さに依存せず原子番号のみに依存する。(\Fref{fig:rate}参照)。すなわち，低エネルギー領域と高エネルギー領域の線源弱係数の比を求めることによって，検査対象の組織の原子番号を求めることができる\cite{material_id}。\\
+先述のように従来のエネルギー積分型のCTでは，線源弱係数は物質が異なっても密度によっては同一になる場合があり，パラメータは一つのCT値のみであったため正確な物質の弁別をすることができなかった。しかし，スペクトラルCTではいくつかのエネルギー帯においてCT値を取得することができるため，パラメータが複数になることで正確な材質の弁別が可能となる。例えば，ある領域に対して低エネルギーと高エネルギーによる線源弱係数を求めたとする。その比($\mu(E_{\rm Low})/\mu(E_{\rm High})$)の原子番号依存性は既知であり，対象組織の密度，厚さに依存せず原子番号のみに依存する。すなわち，低エネルギー領域と高エネルギー領域の線源弱係数の比を求めることによって，検査対象の組織の原子番号を求めることができる\cite{material_id}。\\
 \ \ また，各エネルギー帯ごとに線源弱係数を求めた後，そのエネルギー依存性を既知の候補物質の線源弱係数のエネルギー依存曲線と比較することにより媒質を同定する手法もある\cite{ogawa_id}。
 
 
@@ -528,7 +528,7 @@ CTには低・高2種類の混合エネルギーのX線を照射するデュア�
  \includegraphics[width=12cm]{image/other/k-edge.eps}
  \end{center}
  \vspace{-0.7cm}
- \caption{K吸収端イメージングの原理(減弱曲線はNISTより作成)}
+ \caption{K吸収端イメージングの原理(減弱曲線はNIST\cite{nist}より作成)}
  \label{fig:k-edge}
 \end{figure}
 

@@ -26,13 +26,13 @@
 \contentsline {section}{\numberline {5.4}CTの画質評価}{34}
 \contentsline {subsection}{\numberline {5.4.1}画像ノイズ評価}{34}
 \contentsline {subsection}{\numberline {5.4.2}空間分解能評価}{36}
-\contentsline {subsection}{\numberline {5.4.3}低コントラスト分解能評価}{39}
-\contentsline {section}{\numberline {5.5}従来のエネルギー積分型X線CTの問題点}{39}
-\contentsline {subsection}{\numberline {5.5.1}CT値が同一である物質の弁別が困難}{40}
+\contentsline {subsection}{\numberline {5.4.3}低コントラスト分解能評価}{40}
+\contentsline {section}{\numberline {5.5}従来のエネルギー積分型X線CTの問題点}{40}
+\contentsline {subsection}{\numberline {5.5.1}CT値が同一である物質の弁別が困難}{41}
 \contentsline {subsection}{\numberline {5.5.2}ビームハードニングアーチファクト}{41}
 \contentsline {section}{\numberline {5.6}次世代X線CT}{42}
-\contentsline {subsection}{\numberline {5.6.1}デュアルエナジーCT}{42}
-\contentsline {subsection}{\numberline {5.6.2}フォトンカウンティングCT}{45}
+\contentsline {subsection}{\numberline {5.6.1}デュアルエナジーCT}{43}
+\contentsline {subsection}{\numberline {5.6.2}フォトンカウンティングCT}{46}
 \contentsline {chapter}{\numberline {第6章}低被ばく化の実証}{51}
 \contentsline {section}{\numberline {6.1}画像ノイズ評価}{55}
 \contentsline {section}{\numberline {6.2}低コントラスト分解能評価}{58}
@@ -57,4 +57,4 @@
 \contentsline {chapter}{\numberline {第8章}まとめと今後の展望}{91}
 \contentsline {section}{\numberline {8.1}まとめ}{91}
 \contentsline {section}{\numberline {8.2}今後の展望}{91}
-\contentsline {chapter}{謝辞}{94}
+\contentsline {chapter}{謝辞}{95}

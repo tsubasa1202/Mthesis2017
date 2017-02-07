@@ -61,7 +61,7 @@ PDとAPDでは同一の素子を用いて、印加電圧を変えることでPD�
  \begin{center}
  \includegraphics[width=10cm]{image2/chapter5/apd_gain.eps}
  \end{center}
- \caption{APDのゲイン特性（at 25℃）※rootの画像に差し替える}
+ \caption{APDのゲイン特性（at 25℃）}
  \label{fig:apd_gain}
 \end{figure}
 
@@ -82,7 +82,7 @@ PDとAPDでは同一の素子を用いて、印加電圧を変えることでPD�
     $S/N(I/I_d)$ & $\sim$0.01  & $\sim$0.05  & $\sim$182  \\
     \bottomrule
     \end{tabular}%
-  \label{tab:addlabel}%
+  \label{tab:dark_current}%
 \end{table}%
 
 \if0
@@ -101,7 +101,7 @@ PDとAPDでは同一の素子を用いて、印加電圧を変えることでPD�
   \label{tab:dark_current}%
 \end{table}%
 
-また管電圧120kV、管電流0.1mAを照射したときの書く素子の電流値の大きさを\Tref{tab:soshi_current}に示す。
+また管電圧120kV、管電流0.1mAを照射したときの各素子の電流値の大きさを\Tref{tab:soshi_current}に示す。
 
 \begin{table}[H]
   \centering
@@ -124,9 +124,9 @@ PDとAPDでは同一の素子を用いて、印加電圧を変えることでPD�
 
 \begin{figure}[H]
  \begin{center}
- \includegraphics[bb=0.000000 0.000000 625.388301 214.062304,width=0.8\hsize]{image2/chapter5/setup.png} 
+ \includegraphics[bb=0.000000 0.000000 601.390285 246.699606,width=1.0\hsize]{image2/chapter5/setup_new.png} 
  \end{center}
- \caption{実験セットアップ※アルミニウムフィルターをつける}
+ \caption{実験セットアップ}
  \label{fig:CTsetup}
 \end{figure}
 
@@ -153,7 +153,7 @@ PDとAPDでは同一の素子を用いて、印加電圧を変えることでPD�
  \end{minipage}
  \begin{center}
   \caption{パルスモードの読み出し回路}
-  \label{fig:read_circuit_current}
+  \label{fig:read_circuit_pulse}
   \end{center}
 \end{figure}
 
@@ -233,7 +233,7 @@ CTに於けるノイズ特製の評価は一般に水ファントムを撮影す
 
 \begin{figure}[H]
  \begin{center}
- \includegraphics[bb=0.000000 0.000000 602.830166 462.201791,width=0.6\hsize]{image2/chapter5/SD_ROI.png} 
+ \includegraphics[bb=0.000000 0.000000 602.830166 462.201791,width=0.5\hsize]{image2/chapter5/SD_ROI.png} 
  \end{center}
  \caption{SDを測定するROIの設定}
  \label{fig:SD_ROI}
@@ -251,7 +251,7 @@ CTに於けるノイズ特製の評価は一般に水ファントムを撮影す
     16.5\% & 2.55\% & 4.90\% & 2.38\% \\
     \bottomrule
     \end{tabular}%
-  \label{tab:addlabel}%
+  \label{tab:SD_result}%
 \end{table}%
 
 
@@ -274,7 +274,7 @@ MPPCパルスモードにおいては統計揺らぎが内部増幅機能によ�
 
 \begin{figure}[H]
  \begin{center}
- \includegraphics[width=14cm]{image2/chapter5/phantom1.eps}
+ \includegraphics[width=10cm]{image2/chapter5/phantom1.eps}
  \end{center}
  \caption{低コントラスト分解能実験に用いた被写体}
  \label{fig:phantom1}
@@ -355,7 +355,7 @@ CNR= \frac{\mu_B-\mu_M}{\sigma_B}\label{eq:cnr}
     （$\mu_M/\mu_B$） &       &       &       &  \\
     \bottomrule
     \end{tabular}%
-         \caption{管電圧120kV、管電流0.2mAにおいて各素子で取得したCT画像(\Fref{fig:lowcon1})のCNRの値}
+         \caption{管電圧120kV、管電流0.1mAにおいて各素子で取得したCT画像(\Fref{fig:lowcon1})のCNRの値}
   \label{tab:cnr}%
 \end{table}% 
 
@@ -518,7 +518,7 @@ CNRは定義から明らかであるが$\sigma$に反比例する。$N$を統計
  \begin{center}
  \includegraphics[bb=0.000000 0.000000 823.131954 361.410123,width=1\hsize]{image2/chapter5/PSF_PD.png} 
  \end{center}
- \caption{PDのPSF}
+ \caption{zeroing補正をしたLSF(PD:120kV、3.7mA)}
  \label{fig:PSF_PD}
 \end{figure}
 
@@ -527,7 +527,7 @@ CNRは定義から明らかであるが$\sigma$に反比例する。$N$を統計
  \begin{center}
  \includegraphics[bb=0.000000 0.000000 823.131954 361.410123,width=1\hsize]{image2/chapter5/PSF_MPPC.png} 
  \end{center}
- \caption{MPPCのPSF}
+ \caption{zeroing補正をしたLSF(MPPC:120kV、0.1mA)}
  \label{fig:PSF_MPPC}
 \end{figure}
 
@@ -552,7 +552,7 @@ f_{\rm pitch} = \frac{1}{0.1\times256}\simeq0.039\ {\rm[LP/mm]}
  \label{fig:MTF_matome}
 \end{figure}
 
-MTFが0.1のときの値が目視での空間分解能と等しくなると言われており、\Fref{fig:MTF_matome}においてMPPCパルスモードではMTF0.1の時は$\sim$0.9LP/mm、\footnote{X LP/mmの意味は1mmの中にXペアのラインがある、つまりX LP/mmの場合1ラインの幅は$d=1/2X$となる。}、つまり$\sim$0.5mmの穴が目視で分離できているように見えるということを意味している。\Fref{fig:fire}(d)を見ると、Φ0.5が目視での分離限界であり、\Fref{fig:MTF_matome}が示す結果と一致していると言える。また、臨床で用いられるCTのMTFの一例を\Fref{fig:MTF_rinshou}に示す。これを見るとMTF10\%における空間周波数は0.9LP/mmを下回っており、本実験で得られたMTFの結果の方が優れていることがわかり、0.1mAという超低線量下でも臨床現場で用いられるCTと劣らない解像度を実現することができたと言える。
+MTFが0.1のときの値が目視での空間分解能と等しくなると言われており、\Fref{fig:MTF_matome}においてMPPCパルスモードではMTF0.1の時は$\sim$0.9LP/mmである\footnote{X LP/mmの意味は1mmの中にXペアのラインがある、つまりX LP/mmの場合1ラインの幅は$d=1/2X$となる。}。つまり$\sim$0.5mmの穴が目視で分離できているように見えるということを意味している。\Fref{fig:fire}(d)を見ると、Φ0.5が目視での分離限界であり、\Fref{fig:MTF_matome}が示す結果と一致していると言える。また、臨床で用いられるCTのMTFの一例を\Fref{fig:MTF_rinshou}に示す。これを見るとMTF10\%における空間周波数は0.9LP/mmを下回っており、本実験で得られたMTFの結果の方が優れていることがわかり、0.1mAという超低線量下でも臨床現場で用いられるCTと劣らない解像度を実現することができたと言える。
 
 \begin{figure}[H]
  \begin{center}

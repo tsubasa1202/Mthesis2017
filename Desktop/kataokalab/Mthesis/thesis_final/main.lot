@@ -11,7 +11,7 @@
 \contentsline {table}{\numberline {6.1}{\ignorespaces 実験に使用したPD,APD,MPPCの基本特性\relax }}{51}
 \contentsline {table}{\numberline {6.2}{\ignorespaces 各素子の暗電流値と管電圧120kV、管電流0.1mAを照射したときの出力電流\relax }}{52}
 \contentsline {table}{\numberline {6.3}{\ignorespaces 各素子における画像ノイズ(SD)の評価結果\relax }}{57}
-\contentsline {table}{\numberline {6.4}{\ignorespaces 管電圧120kV、管電流0.2mAにおいて各素子で取得したCT画像(図\nobreakspace {}6.11\relax )のCNRの値\relax }}{60}
+\contentsline {table}{\numberline {6.4}{\ignorespaces 管電圧120kV、管電流0.1mAにおいて各素子で取得したCT画像(図\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig:lowcon1' on page 60 undefined})のCNRの値\relax }}{60}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {7.1}{\ignorespaces 各エネルギーバンドでのCT画像のコントラスト比とCNR\relax }}{77}
 \contentsline {table}{\numberline {7.2}{\ignorespaces それぞれの物質の実効原子番号と実験値\relax }}{82}
