@@ -57,14 +57,14 @@
 \contentsline {figure}{\numberline {6.8}{\ignorespaces 各素子で撮影した水ファントムの画像(管電流0.5mA)\relax }}{56}
 \contentsline {figure}{\numberline {6.9}{\ignorespaces SDを測定するROIの設定\relax }}{57}
 \contentsline {figure}{\numberline {6.10}{\ignorespaces 低コントラスト分解能実験に用いた被写体\relax }}{58}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces 各素子で撮影した図\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig:phantom1' on page 59 undefined}のCT画像と1次元プロファイル(120kV、0.1mA)\relax }}{59}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces 各素子で撮影した図\nobreakspace {}6.10\relax のCT画像と1次元プロファイル(120kV、0.1mA)\relax }}{59}
 \contentsline {figure}{\numberline {6.12}{\ignorespaces ROIの位置\relax }}{60}
 \contentsline {figure}{\numberline {6.13}{\ignorespaces 管電圧120kVで管電流を変化させた時のCNR\relax }}{61}
 \contentsline {figure}{\numberline {6.14}{\ignorespaces 空間分解能評価ファントム\relax }}{62}
 \contentsline {figure}{\numberline {6.15}{\ignorespaces 空間分解能評価ファントムのCT画像\relax }}{63}
 \contentsline {figure}{\numberline {6.16}{\ignorespaces MTF測定に用いたファントム※模式図を隣にのせる\relax }}{64}
 \contentsline {figure}{\numberline {6.17}{\ignorespaces MTFの測定手順\relax }}{65}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces PDとMPPC(パルスモード)で取得した図\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig:MTF_phantom' on page 66 undefined}のCT画像(120kV)※大きさがあっていないので直す\relax }}{66}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces PDとMPPC(パルスモード)で取得した図\nobreakspace {}6.16\relax のCT画像(120kV)※大きさがあっていないので直す\relax }}{66}
 \contentsline {figure}{\numberline {6.19}{\ignorespaces zeroing補正をしたLSF(PD:120kV、3.7mA)\relax }}{66}
 \contentsline {figure}{\numberline {6.20}{\ignorespaces zeroing補正をしたLSF(MPPC:120kV、0.1mA)\relax }}{67}
 \contentsline {figure}{\numberline {6.21}{\ignorespaces MTF\relax }}{68}
@@ -77,11 +77,11 @@
 \contentsline {figure}{\numberline {7.5}{\ignorespaces $V_{th1}=30keV, V_{th2}=60keV, V_{th3}=90keV,$に設定したとき、それぞれの閾値を超える波高を持つ信号の例\relax }}{73}
 \contentsline {figure}{\numberline {7.6}{\ignorespaces 水とアルコールの線減弱係数(NISTより作成)\relax }}{74}
 \contentsline {figure}{\numberline {7.7}{\ignorespaces 各エネルギー閾値におけるX線エネルギースペクトル\relax }}{75}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces 図\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig:phantom1' on page 76 undefined}の全エネルギーと各エネルギーバンドにおけるCT画像\relax }}{76}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces 図\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig:low_contrast_multi' on page 77 undefined}の一次元プロファイル\relax }}{77}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces 図\nobreakspace {}6.10\relax の全エネルギーと各エネルギーバンドにおけるCT画像\relax }}{76}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces 図\nobreakspace {}7.8\relax の一次元プロファイル\relax }}{77}
 \contentsline {figure}{\numberline {7.10}{\ignorespaces 測定ファントム\relax }}{78}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces 図\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig:Al_Al' on page 79 undefined}の全エネルギーと各エネルギーバンドにおけるCT画像\relax }}{79}
-\contentsline {figure}{\numberline {7.12}{\ignorespaces 図\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig:BH_multi' on page 80 undefined}の一次元プロファイル\relax }}{80}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces 図\nobreakspace {}7.10\relax の全エネルギーと各エネルギーバンドにおけるCT画像\relax }}{79}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces 図\nobreakspace {}7.11\relax の一次元プロファイル\relax }}{80}
 \contentsline {figure}{\numberline {7.13}{\ignorespaces f(Z)の原子番号依存性(NISTより算出)\relax }}{81}
 \contentsline {figure}{\numberline {7.14}{\ignorespaces それぞれのCT画像の原子番号同定結果\relax }}{82}
 \contentsline {figure}{\numberline {7.15}{\ignorespaces ヨードのK-edgeイメージングに用いたファントム\relax }}{83}
